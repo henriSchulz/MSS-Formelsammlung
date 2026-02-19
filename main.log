@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.6)  19 FEB 2026 11:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.6)  19 FEB 2026 11:42
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
@@ -605,15 +604,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
-./main.tex:151: Undefined control sequence.
-l.151 ...\frac{\partial I_D}{\partial V_{BS}} = \m
-                                                  _n \cdot C_{ox} \frac{W}{L...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 <assets/p-cap.png, id=1, 1190.4475pt x 515.9275pt>
 File: assets/p-cap.png Graphic file (type png)
 <use assets/p-cap.png>
@@ -661,639 +651,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--299
 
  []
 
-./main.tex:324: Missing $ inserted.
-<inserted text> 
-                $
-l.324 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:324: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.324 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-./main.tex:340: Double subscript.
-<argument> \omega _z_
-                     1
-l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
-                                                   \right|_{s = j\omega}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./main.tex:340: Double subscript.
-<argument> \omega _z_
-                     2
-l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
-                                                   \right|_{s = j\omega}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./main.tex:340: Double subscript.
-<argument> \omega _z_
-                     n
-l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
-                                                   \right|_{s = j\omega}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./main.tex:340: Double subscript.
-<argument> \omega _p_
-                     1
-l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
-                                                   \right|_{s = j\omega}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./main.tex:340: Double subscript.
-<argument> \omega _p_
-                     2
-l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
-                                                   \right|_{s = j\omega}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-./main.tex:340: Double subscript.
-<argument> \omega _p_
-                     m
-l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
-                                                   \right|_{s = j\omega}
-I treat `x_1_2' essentially like `x_1{}_2'.
-
-
-./main.tex:348: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.348 \algo
-           {Miller Theorem}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Runaway argument?
- 
-./main.tex:393: Paragraph ended before \align* was complete.
-<to be read again> 
-                   \par 
-l.393 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-./main.tex:393: Missing $ inserted.
-<inserted text> 
-                $
-l.393 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:393: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.393 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:393: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.393 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-./main.tex:394: Missing $ inserted.
-<inserted text> 
-                $
-l.394   R'_
-           L &= R_D \| R_L \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:394: Misplaced alignment tab character &.
-l.394   R'_L &
-              = R_D \| R_L \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:395: Missing $ inserted.
-<inserted text> 
-                $
-l.395 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
-
- []
-
-./main.tex:396: Missing $ inserted.
-<inserted text> 
-                $
-l.396   \tau
-            _1 = R_{C_{gs}} \cdot C_{gs}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:397: Misplaced alignment tab character &.
-l.397   &
-         = (R_{\text{sig}} \| R_{\text{eq}}) \cdot C_{gs}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:399: Missing $ inserted.
-<inserted text> 
-                $
-l.399 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--399
-
- []
-
-./main.tex:400: Missing $ inserted.
-<inserted text> 
-                $
-l.400   C'_
-           L &= C_{gd} + C_{db} \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:400: Misplaced alignment tab character &.
-l.400   C'_L &
-              = C_{gd} + C_{db} \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:401: Missing $ inserted.
-<inserted text> 
-                $
-l.401 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
-
- []
-
-./main.tex:402: Missing $ inserted.
-<inserted text> 
-                $
-l.402   \tau
-            _2 = R_{C'_L} \cdot C'_L
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:403: Misplaced alignment tab character &.
-l.403   &
-         = \frac{v_x}{i_x} \cdot C'_L
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:405: Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.405 \end{align*}
-                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:405: Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.405 \end{align*}
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./main.tex:405: Missing $ inserted.
-<inserted text> 
-                $
-l.405 \end{align*}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:405: Missing } inserted.
-<inserted text> 
-                }
-l.405 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:405: Extra }, or forgotten \endgroup.
-\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
-                                                  
-l.405 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./main.tex:405: Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.405 \end{align*}
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Overfull \hbox (257.07593pt too wide) detected at line 405
-[]
- []
-
-./main.tex:405: Extra }, or forgotten \endgroup.
-\endalign ->\math@cr \black@ \totwidth@ \egroup 
-                                                \ifingather@ \restorealignst...
-l.405 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./main.tex:405: Missing $ inserted.
-<inserted text> 
-                $
-l.405 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:405: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.405 \end{align*}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
 <assets/REQ.png, id=31, 1186.4325pt x 706.64pt>
 File: assets/REQ.png Graphic file (type png)
 <use assets/REQ.png>
-Package pdftex.def Info: assets/REQ.png  used on input line 407.
+Package pdftex.def Info: assets/REQ.png  used on input line 402.
 (pdftex.def)             Requested size: 280.52756pt x 167.08475pt.
-Runaway argument?
- R_{d1} &= r_{o1} \| R_{\text {in2}} \\ R_{\text {in2}} &= \frac {r_{\ETC.
-./main.tex:415: Paragraph ended before \align* was complete.
-<to be read again> 
-                   \par 
-l.415 
-      
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
 
-./main.tex:415: Missing $ inserted.
-<inserted text> 
-                $
-l.415 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:415: Missing \endgroup inserted.
-<inserted text> 
-                \endgroup 
-l.415 
-      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:415: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.415 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-./main.tex:416: Missing $ inserted.
-<inserted text> 
-                $
-l.416   \tau
-            _1 = R_{C_{gs1}} \cdot C_{gs1}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:417: Misplaced alignment tab character &.
-l.417   &
-         = (R_{\text{sig}}) \cdot C_{gs1} \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:418: Missing $ inserted.
-<inserted text> 
-                $
-l.418 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--418
-
- []
-
-./main.tex:419: Missing $ inserted.
-<inserted text> 
-                $
-l.419   \tau
-            _2 = R_{C_{gd1}} \cdot C_{gd1}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:420: Misplaced alignment tab character &.
-l.420   &
-         = \frac{v_x}{i_x} \cdot C_{gd1}
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:422: Missing $ inserted.
-<inserted text> 
-                $
-l.422 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--422
-
- []
-
-./main.tex:423: Missing $ inserted.
-<inserted text> 
-                $
-l.423   R_
-          {d1} = r_{o1} \| R_{\text{in2}} &= r_{o1} \| \frac{r_{o2} + R_L}{1...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:423: Misplaced alignment tab character &.
-l.423   R_{d1} = r_{o1} \| R_{\text{in2}} &
-                                           = r_{o1} \| \frac{r_{o2} + R_L}{1...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:424: Missing $ inserted.
-<inserted text> 
-                $
-l.424 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
-
- []
-
-./main.tex:425: Missing $ inserted.
-<inserted text> 
-                $
-l.425   \tau
-            _3 = R_{C_{d1}} \cdot (C_{db1} + C_{gs2})
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:426: Misplaced alignment tab character &.
-l.426   &
-         = (R_{d1}) \cdot (C_{db1} + C_{gs2}) \\
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:427: Missing $ inserted.
-<inserted text> 
-                $
-l.427 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--427
-
- []
-
-./main.tex:428: Missing $ inserted.
-<inserted text> 
-                $
-l.428   R_
-          o \approx g_{m2} r_{o2} r_{o1} \quad \text{Vgl. Kaskode Ausgangswi...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:429: Missing $ inserted.
-<inserted text> 
-                $
-l.429 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
-
- []
-
-./main.tex:430: Missing $ inserted.
-<inserted text> 
-                $
-l.430   \tau
-            _4 = R_{C_{out}} \cdot (C_L + C_{gd2} + C_{db2})
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:431: Misplaced alignment tab character &.
-l.431   &
-         = (R_o \| R_L) \cdot (C_L + C_{gd2} + C_{db2})
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:432: Misplaced \cr.
-\math@cr@@@ ->\cr 
-                  
-l.432 \end{align*}
-                  
-I can't figure out why you would want to use a tab mark
-or \cr or \span just now. If something like a right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./main.tex:432: Misplaced \noalign.
-\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
-                                                  {\vskip #1\relax }
-l.432 \end{align*}
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-./main.tex:432: Missing $ inserted.
-<inserted text> 
-                $
-l.432 \end{align*}
-                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./main.tex:432: Missing } inserted.
-<inserted text> 
-                }
-l.432 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:432: Extra }, or forgotten \endgroup.
-\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
-                                                  
-l.432 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./main.tex:432: Misplaced \noalign.
-\black@ #1->\noalign 
-                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
-l.432 \end{align*}
-                  
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
-Overfull \hbox (257.07593pt too wide) detected at line 432
+Overfull \hbox (67.36465pt too wide) detected at line 421
 []
  []
-
-./main.tex:432: Extra }, or forgotten \endgroup.
-\endalign ->\math@cr \black@ \totwidth@ \egroup 
-                                                \ifingather@ \restorealignst...
-l.432 \end{align*}
-                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./main.tex:432: Missing $ inserted.
-<inserted text> 
-                $
-l.432 \end{align*}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./main.tex:432: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.432 \end{align*}
-                  
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
 
 <assets/fqca.png, id=32, 839.135pt x 740.7675pt>
 File: assets/fqca.png Graphic file (type png)
 <use assets/fqca.png>
-Package pdftex.def Info: assets/fqca.png  used on input line 434.
+Package pdftex.def Info: assets/fqca.png  used on input line 423.
 (pdftex.def)             Requested size: 280.52756pt x 247.64153pt.
-./main.tex:451: Undefined control sequence.
-<argument> v_\text {gs}(i_\test 
-                                {test})
-l.451 ..._\text{gs}(i_\test{test})}{i_\text{test}}
-                                                  $
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 466--469
+Underfull \hbox (badness 10000) in paragraph at lines 455--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--491
+Underfull \hbox (badness 10000) in paragraph at lines 476--480
 
  []
 
@@ -1301,26 +680,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 487--491
 <assets/DT1.png, id=40, 1519.6775pt x 584.1825pt>
 File: assets/DT1.png Graphic file (type png)
 <use assets/DT1.png>
-Package pdftex.def Info: assets/DT1.png  used on input line 500.
+Package pdftex.def Info: assets/DT1.png  used on input line 489.
 (pdftex.def)             Requested size: 280.52756pt x 107.83139pt.
 <assets/DT2.png, id=41, 1415.2875pt x 682.55pt>
 File: assets/DT2.png Graphic file (type png)
 <use assets/DT2.png>
-Package pdftex.def Info: assets/DT2.png  used on input line 504.
+Package pdftex.def Info: assets/DT2.png  used on input line 493.
 (pdftex.def)             Requested size: 280.52756pt x 135.28903pt.
 <assets/DT3.png, id=42, 1104.125pt x 598.235pt>
 File: assets/DT3.png Graphic file (type png)
 <use assets/DT3.png>
-Package pdftex.def Info: assets/DT3.png  used on input line 529.
+Package pdftex.def Info: assets/DT3.png  used on input line 518.
 (pdftex.def)             Requested size: 280.52756pt x 151.99564pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--530
+Underfull \hbox (badness 10000) in paragraph at lines 517--519
 \T1/lmr/bx/n/10 Latch vs. Flip-Flop\T1/lmr/m/n/10 : Flip-Flop: Takt-ge-steu-ert
 , rea-giert nur auf Flan-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 528--530
+Underfull \hbox (badness 10000) in paragraph at lines 517--519
 \T1/lmr/m/n/10 ken, syn-chron. Latch: Trans-pa-rent, rea-giert auf Pe-gel, asyn
 -chron.
  []
@@ -1328,79 +707,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 528--530
 <assets/DT4.png, id=43, 1053.9375pt x 226.8475pt>
 File: assets/DT4.png Graphic file (type png)
 <use assets/DT4.png>
-Package pdftex.def Info: assets/DT4.png  used on input line 533.
+Package pdftex.def Info: assets/DT4.png  used on input line 522.
 (pdftex.def)             Requested size: 374.03674pt x 80.50891pt.
 <assets/DT6.png, id=44, 2534.46875pt x 1214.5375pt>
 File: assets/DT6.png Graphic file (type png)
 <use assets/DT6.png>
-Package pdftex.def Info: assets/DT6.png  used on input line 577.
+Package pdftex.def Info: assets/DT6.png  used on input line 566.
 (pdftex.def)             Requested size: 374.03674pt x 179.22612pt.
 <assets/DT10.png, id=45, 1088.065pt x 921.4425pt>
 File: assets/DT10.png Graphic file (type png)
 <use assets/DT10.png>
-Package pdftex.def Info: assets/DT10.png  used on input line 585.
+Package pdftex.def Info: assets/DT10.png  used on input line 574.
 (pdftex.def)             Requested size: 374.03674pt x 316.75914pt.
 <assets/DT7.png, id=46, 4015.0pt x 833.1125pt>
 File: assets/DT7.png Graphic file (type png)
 <use assets/DT7.png>
-Package pdftex.def Info: assets/DT7.png  used on input line 587.
+Package pdftex.def Info: assets/DT7.png  used on input line 576.
 (pdftex.def)             Requested size: 374.03674pt x 77.60832pt.
 [3 <./assets/DT1.png> <./assets/DT2.png> <./assets/DT3.png> <./assets/DT4.png> 
-<./assets/DT6.png> <./assets/DT10.png> <./assets/DT7.png>]
-Underfull \hbox (badness 7186) in paragraph at lines 603--604
+<./assets/DT6.png> <./assets/DT10.png>]
+Underfull \hbox (badness 7186) in paragraph at lines 592--593
 [][]\T1/lmr/bx/n/10 Partitioning[]\T1/lmr/m/n/10 : Zer-legt Multiple-Input/Mult
 iple-Output-Netzwerke in Multiple-
  []
 
-./main.tex:619: Double superscript.
-l.619 ...durch die maximale Input Anzahl (da $2^2^
-                                                  n$ schnell explodiert)
-I treat `x^1^2' essentially like `x^1{}^2'.
-
-<assets/DT8.png, id=57, 1961.3275pt x 622.325pt>
+<assets/DT8.png, id=56, 1961.3275pt x 622.325pt>
 File: assets/DT8.png Graphic file (type png)
 <use assets/DT8.png>
-Package pdftex.def Info: assets/DT8.png  used on input line 677.
+Package pdftex.def Info: assets/DT8.png  used on input line 666.
 (pdftex.def)             Requested size: 374.03674pt x 118.67978pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--683
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
 []|\T1/lmr/m/n/10 Direkte Stern-Verbindung von ei-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 683--683
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
 []|\T1/lmr/m/n/10 Minimale Si-gnal-ver-zö-ge-
  []
 
 
-Underfull \hbox (badness 5091) in paragraph at lines 685--685
+Underfull \hbox (badness 5091) in paragraph at lines 674--674
 []|\T1/lmr/m/n/10 Rectilinear Stei-ner Mi-ni-mum Tree:
  []
 
 
-Overfull \hbox (86.33492pt too wide) in paragraph at lines 679--687
+Overfull \hbox (86.33492pt too wide) in paragraph at lines 668--676
 [][] 
  []
 
-<assets/DT9.png, id=58, 1479.5275pt x 600.2425pt>
+<assets/DT9.png, id=57, 1479.5275pt x 600.2425pt>
 File: assets/DT9.png Graphic file (type png)
 <use assets/DT9.png>
-Package pdftex.def Info: assets/DT9.png  used on input line 695.
+Package pdftex.def Info: assets/DT9.png  used on input line 684.
 (pdftex.def)             Requested size: 374.03674pt x 151.7455pt.
-[4 <./assets/DT8.png> <./assets/DT9.png>] (./main.aux)
+[4 <./assets/DT7.png> <./assets/DT8.png> <./assets/DT9.png>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8456 strings out of 473190
- 129591 string characters out of 5715801
+ 8455 strings out of 473190
+ 129587 string characters out of 5715801
  771966 words of memory out of 5000000
- 31557 multiletter control sequences out of 15000+600000
+ 31556 multiletter control sequences out of 15000+600000
  619827 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,17n,69p,458b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,18n,69p,458b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
 cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
 e/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texm
@@ -1417,7 +791,7 @@ i10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri7.pfb></u
 sr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/t
 exlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025
 /texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on main.pdf (4 pages, 1862669 bytes).
+Output written on main.pdf (4 pages, 1862201 bytes).
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  79 compressed objects within 1 object stream
