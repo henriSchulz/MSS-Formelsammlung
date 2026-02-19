@@ -1,17 +1,15 @@
-
-name: Build LaTeX PDF on Release
-
+name: Build LaTeX PDF on Commit
 
 on:
-  release:
-    types: [created]
-
+  push:
+    branches:
+      - main  # Ersetze 'main' durch deinen Branch-Namen, falls dieser anders heißt
+    paths:
+      - '**.tex' # Optional: Baut nur, wenn sich tatsächlich LaTeX-Dateien ändern
 
 jobs:
   build_latex:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout Repository
@@ -27,12 +25,9 @@ jobs:
       - name: Rename PDF
         run: mv main.pdf MSS-Formelsammlung.pdf
 
-      - name: Upload PDF to Release
-        uses: actions/upload-release-asset@v1
+      - name: Upload PDF Artifact
+        uses: actions/upload-artifact@v4
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./MSS-Formelsammlung.pdf
-          asset_name: MSS-Formelsammlung.pdf
-          asset_content_type: application/pdf
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: MSS-Formelsammlung-Build
+          path: MSS-Formelsammlung.pdf
+          #retention-days: 14 # Optional: Löscht das File automatisch nach 14 Tagen
