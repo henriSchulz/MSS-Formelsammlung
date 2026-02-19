@@ -1,0 +1,1426 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.6)  19 FEB 2026 11:13
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen142
+))
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen143
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count270
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count271
+\leftroot@=\count272
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count273
+\DOTSCASE@=\count274
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box52
+\strutbox@=\box53
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen144
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count275
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count276
+\dotsspace@=\muskip17
+\c@parentequation=\count277
+\dspbrk@lvl=\count278
+\tag@help=\toks20
+\row@=\count279
+\column@=\count280
+\maxfields@=\count281
+\andhelp@=\toks21
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
+\@envbody=\toks22
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaT
+eX and XeLaTeX
+\babel@savecnt=\count282
+\U@D=\dimen151
+\l@unhyphenated=\language90
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count283
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 2024/12/10 v2.15 German support for babel (post-1996 orthogra
+phy)
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2024/12/10 v2.15 German support for babel (post-1996 orthogr
+aphy)
+Package babel Info: Making " an active character on input line 122.
+)))
+(/usr/local/texlive/2025/texmf-dist/tex/generic/babel/locale/de/babel-ngerman.t
+ex
+Package babel Info: Importing font and identification data for ngerman
+(babel)             from babel-de.ini. Reported on input line 11.
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count284
+\mult@box=\box54
+\multicol@leftmargin=\dimen154
+\c@unbalance=\count285
+\c@collectmore=\count286
+\doublecol@number=\count287
+\multicoltolerance=\count288
+\multicolpretolerance=\count289
+\full@width=\dimen155
+\page@free=\dimen156
+\premulticols=\dimen157
+\postmulticols=\dimen158
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box55
+\last@line=\box56
+\mc@boxedresult=\box57
+\maxbalancingoverflow=\dimen159
+\mult@rightbox=\box58
+\mult@grightbox=\box59
+\mult@firstbox=\box60
+\mult@gfirstbox=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\c@minrows=\count290
+\c@columnbadness=\count291
+\c@finalcolumnbadness=\count292
+\last@try=\dimen160
+\multicolovershoot=\dimen161
+\multicolundershoot=\dimen162
+\mult@nat@firstbox=\box98
+\colbreak@box=\box99
+\mc@col@check@num=\count293
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count294
+\Gm@cntv=\count295
+\c@Gm@tempcnt=\count296
+\Gm@bindingoffset=\dimen163
+\Gm@wd@mp=\dimen164
+\Gm@odd@mp=\dimen165
+\Gm@even@mp=\dimen166
+\Gm@layoutwidth=\dimen167
+\Gm@layoutheight=\dimen168
+\Gm@layouthoffset=\dimen169
+\Gm@layoutvoffset=\dimen170
+\Gm@dimlist=\toks25
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2025/02/06 v3.11 Customized lists
+\labelindent=\skip56
+\enit@outerparindent=\dimen171
+\enit@toks=\toks26
+\enit@inbox=\box100
+\enit@count@id=\count297
+\enitdp@description=\count298
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks27
+\verbatim@line=\toks28
+\verbatim@in@stream=\read3
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count299
+\lst@gtempboxa=\box101
+\lst@token=\toks29
+\lst@length=\count300
+\lst@currlwidth=\dimen172
+\lst@column=\count301
+\lst@pos=\count302
+\lst@lostspace=\dimen173
+\lst@width=\dimen174
+\lst@newlines=\count303
+\lst@lineno=\count304
+\lst@maxwidth=\dimen175
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count305
+\lst@skipnumbers=\count306
+\lst@framebox=\box102
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen176
+\lightrulewidth=\dimen177
+\cmidrulewidth=\dimen178
+\belowrulesep=\dimen179
+\belowbottomsep=\dimen180
+\aboverulesep=\dimen181
+\abovetopsep=\dimen182
+\cmidrulesep=\dimen183
+\cmidrulekern=\dimen184
+\defaultaddspace=\dimen185
+\@cmidla=\count307
+\@cmidlb=\count308
+\@aboverulesep=\dimen186
+\@belowrulesep=\dimen187
+\@thisruleclass=\count309
+\@lastruleclass=\count310
+\@thisrulewidth=\dimen188
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen189
+\ar@mcellbox=\box103
+\extrarowheight=\dimen190
+\NC@list=\toks30
+\extratabsurround=\skip57
+\backup@length=\skip58
+\ar@cellbox=\box104
+)
+\TX@col@width=\dimen191
+\TX@old@table=\dimen192
+\TX@old@col=\dimen193
+\TX@target=\dimen194
+\TX@delta=\dimen195
+\TX@cols=\count311
+\TX@ftn=\toks31
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip59
+\RaggedLeftLeftskip=\skip60
+\RaggedRightLeftskip=\skip61
+\CenteringRightskip=\skip62
+\RaggedLeftRightskip=\skip63
+\RaggedRightRightskip=\skip64
+\CenteringParfillskip=\skip65
+\RaggedLeftParfillskip=\skip66
+\RaggedRightParfillskip=\skip67
+\JustifyingParfillskip=\skip68
+\CenteringParindent=\skip69
+\RaggedLeftParindent=\skip70
+\RaggedRightParindent=\skip71
+\JustifyingParindent=\skip72
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+\everycr=\toks32
+\minrowclearance=\skip73
+\rownum=\count312
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip74
+\multirow@cntb=\count313
+\multirow@dima=\skip75
+\bigstrutjot=\dimen196
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen197
+\c@nlinenum=\count314
+\TeXr@lab=\toks33
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box105
+\beforetitleunit=\skip76
+\aftertitleunit=\skip77
+\ttl@plus=\dimen198
+\ttl@minus=\dimen199
+\ttl@toksa=\toks34
+\titlewidth=\dimen256
+\titlewidthlast=\dimen257
+\titlewidthfirst=\dimen258
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count315
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+1.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count316
+\l__pdf_internal_box=\box106
+)
+
+LaTeX Warning: Unused global option(s):
+    [8pt].
+
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+
+(/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count317
+\scratchdimen=\dimen259
+\scratchbox=\box107
+\nofMPsegments=\count318
+\nofMParguments=\count319
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count320
+\MPscratchDim=\dimen260
+\MPnumerator=\count321
+\makeMPintoPDFobject=\count322
+\everyMPtoPDFconversion=\toks36
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a3paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: landscape 
+* h-part:(L,W,R)=(28.45274pt, 1138.11026pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* \paperwidth=1195.01575pt
+* \paperheight=845.04684pt
+* \textwidth=1138.11026pt
+* \textheight=788.14136pt
+* \oddsidemargin=-43.81725pt
+* \evensidemargin=-43.81725pt
+* \topmargin=-80.81725pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=144.0pt
+* \marginparsep=11.0pt
+* \columnsep=19.91684pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\c@lstlisting=\count323
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+18.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+18.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+118.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+118.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 118.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 118.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 118.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 118
+.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 118
+.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
+
+ []
+
+./main.tex:151: Undefined control sequence.
+l.151 ...\frac{\partial I_D}{\partial V_{BS}} = \m
+                                                  _n \cdot C_{ox} \frac{W}{L...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<assets/p-cap.png, id=1, 1190.4475pt x 515.9275pt>
+File: assets/p-cap.png Graphic file (type png)
+<use assets/p-cap.png>
+Package pdftex.def Info: assets/p-cap.png  used on input line 168.
+(pdftex.def)             Requested size: 261.82457pt x 113.46503pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
+
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 199.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 199.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+14.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<assets/fcan.png, id=3, 696.6025pt x 807.015pt>
+File: assets/fcan.png Graphic file (type png)
+<use assets/fcan.png>
+Package pdftex.def Info: assets/fcan.png  used on input line 219.
+(pdftex.def)             Requested size: 187.01837pt x 216.65324pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
+
+ []
+
+<assets/vd.png, id=4, 429.605pt x 586.19pt>
+File: assets/vd.png Graphic file (type png)
+<use assets/vd.png>
+Package pdftex.def Info: assets/vd.png  used on input line 291.
+(pdftex.def)             Requested size: 112.21252pt x 112.20909pt.
+[1
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/202
+5/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-di
+st/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/d
+vips/lm/lm-mathex.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm
+-mathsy.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} 
+<./assets/p-cap.png> <./assets/fcan.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 294--299
+
+ []
+
+./main.tex:324: Missing $ inserted.
+<inserted text> 
+                $
+l.324 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:324: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.324 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./main.tex:340: Double subscript.
+<argument> \omega _z_
+                     1
+l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
+                                                   \right|_{s = j\omega}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./main.tex:340: Double subscript.
+<argument> \omega _z_
+                     2
+l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
+                                                   \right|_{s = j\omega}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./main.tex:340: Double subscript.
+<argument> \omega _z_
+                     n
+l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
+                                                   \right|_{s = j\omega}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./main.tex:340: Double subscript.
+<argument> \omega _p_
+                     1
+l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
+                                                   \right|_{s = j\omega}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./main.tex:340: Double subscript.
+<argument> \omega _p_
+                     2
+l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
+                                                   \right|_{s = j\omega}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+./main.tex:340: Double subscript.
+<argument> \omega _p_
+                     m
+l.340 ...omega_p_2})...(1 + \frac{s}{\omega_p_m})}
+                                                   \right|_{s = j\omega}
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+
+./main.tex:348: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.348 \algo
+           {Miller Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Runaway argument?
+ 
+./main.tex:393: Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.393 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./main.tex:393: Missing $ inserted.
+<inserted text> 
+                $
+l.393 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:393: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.393 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:393: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.393 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./main.tex:394: Missing $ inserted.
+<inserted text> 
+                $
+l.394   R'_
+           L &= R_D \| R_L \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:394: Misplaced alignment tab character &.
+l.394   R'_L &
+              = R_D \| R_L \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:395: Missing $ inserted.
+<inserted text> 
+                $
+l.395 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
+
+ []
+
+./main.tex:396: Missing $ inserted.
+<inserted text> 
+                $
+l.396   \tau
+            _1 = R_{C_{gs}} \cdot C_{gs}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:397: Misplaced alignment tab character &.
+l.397   &
+         = (R_{\text{sig}} \| R_{\text{eq}}) \cdot C_{gs}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:399: Missing $ inserted.
+<inserted text> 
+                $
+l.399 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--399
+
+ []
+
+./main.tex:400: Missing $ inserted.
+<inserted text> 
+                $
+l.400   C'_
+           L &= C_{gd} + C_{db} \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:400: Misplaced alignment tab character &.
+l.400   C'_L &
+              = C_{gd} + C_{db} \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:401: Missing $ inserted.
+<inserted text> 
+                $
+l.401 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
+
+ []
+
+./main.tex:402: Missing $ inserted.
+<inserted text> 
+                $
+l.402   \tau
+            _2 = R_{C'_L} \cdot C'_L
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:403: Misplaced alignment tab character &.
+l.403   &
+         = \frac{v_x}{i_x} \cdot C'_L
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:405: Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.405 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:405: Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.405 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./main.tex:405: Missing $ inserted.
+<inserted text> 
+                $
+l.405 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:405: Missing } inserted.
+<inserted text> 
+                }
+l.405 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:405: Extra }, or forgotten \endgroup.
+\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
+                                                  
+l.405 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./main.tex:405: Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.405 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (257.07593pt too wide) detected at line 405
+[]
+ []
+
+./main.tex:405: Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.405 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./main.tex:405: Missing $ inserted.
+<inserted text> 
+                $
+l.405 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:405: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.405 \end{align*}
+                  
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+<assets/REQ.png, id=31, 1186.4325pt x 706.64pt>
+File: assets/REQ.png Graphic file (type png)
+<use assets/REQ.png>
+Package pdftex.def Info: assets/REQ.png  used on input line 407.
+(pdftex.def)             Requested size: 280.52756pt x 167.08475pt.
+Runaway argument?
+ R_{d1} &= r_{o1} \| R_{\text {in2}} \\ R_{\text {in2}} &= \frac {r_{\ETC.
+./main.tex:415: Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.415 
+      
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+./main.tex:415: Missing $ inserted.
+<inserted text> 
+                $
+l.415 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:415: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.415 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:415: Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.415 
+      
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+./main.tex:416: Missing $ inserted.
+<inserted text> 
+                $
+l.416   \tau
+            _1 = R_{C_{gs1}} \cdot C_{gs1}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:417: Misplaced alignment tab character &.
+l.417   &
+         = (R_{\text{sig}}) \cdot C_{gs1} \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:418: Missing $ inserted.
+<inserted text> 
+                $
+l.418 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--418
+
+ []
+
+./main.tex:419: Missing $ inserted.
+<inserted text> 
+                $
+l.419   \tau
+            _2 = R_{C_{gd1}} \cdot C_{gd1}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:420: Misplaced alignment tab character &.
+l.420   &
+         = \frac{v_x}{i_x} \cdot C_{gd1}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:422: Missing $ inserted.
+<inserted text> 
+                $
+l.422 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--422
+
+ []
+
+./main.tex:423: Missing $ inserted.
+<inserted text> 
+                $
+l.423   R_
+          {d1} = r_{o1} \| R_{\text{in2}} &= r_{o1} \| \frac{r_{o2} + R_L}{1...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:423: Misplaced alignment tab character &.
+l.423   R_{d1} = r_{o1} \| R_{\text{in2}} &
+                                           = r_{o1} \| \frac{r_{o2} + R_L}{1...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:424: Missing $ inserted.
+<inserted text> 
+                $
+l.424 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+
+ []
+
+./main.tex:425: Missing $ inserted.
+<inserted text> 
+                $
+l.425   \tau
+            _3 = R_{C_{d1}} \cdot (C_{db1} + C_{gs2})
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:426: Misplaced alignment tab character &.
+l.426   &
+         = (R_{d1}) \cdot (C_{db1} + C_{gs2}) \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:427: Missing $ inserted.
+<inserted text> 
+                $
+l.427 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--427
+
+ []
+
+./main.tex:428: Missing $ inserted.
+<inserted text> 
+                $
+l.428   R_
+          o \approx g_{m2} r_{o2} r_{o1} \quad \text{Vgl. Kaskode Ausgangswi...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:429: Missing $ inserted.
+<inserted text> 
+                $
+l.429 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
+ []
+
+./main.tex:430: Missing $ inserted.
+<inserted text> 
+                $
+l.430   \tau
+            _4 = R_{C_{out}} \cdot (C_L + C_{gd2} + C_{db2})
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:431: Misplaced alignment tab character &.
+l.431   &
+         = (R_o \| R_L) \cdot (C_L + C_{gd2} + C_{db2})
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:432: Misplaced \cr.
+\math@cr@@@ ->\cr 
+                  
+l.432 \end{align*}
+                  
+I can't figure out why you would want to use a tab mark
+or \cr or \span just now. If something like a right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+./main.tex:432: Misplaced \noalign.
+\math@cr@@ ... \iffalse }\fi \math@cr@@@ \noalign 
+                                                  {\vskip #1\relax }
+l.432 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./main.tex:432: Missing $ inserted.
+<inserted text> 
+                $
+l.432 \end{align*}
+                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./main.tex:432: Missing } inserted.
+<inserted text> 
+                }
+l.432 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:432: Extra }, or forgotten \endgroup.
+\math@cr@@ ...th@cr@@@ \noalign {\vskip #1\relax }
+                                                  
+l.432 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./main.tex:432: Misplaced \noalign.
+\black@ #1->\noalign 
+                     {\ifdim #1>\displaywidth \dimen@ \prevdepth \nointerlin...
+l.432 \end{align*}
+                  
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+
+Overfull \hbox (257.07593pt too wide) detected at line 432
+[]
+ []
+
+./main.tex:432: Extra }, or forgotten \endgroup.
+\endalign ->\math@cr \black@ \totwidth@ \egroup 
+                                                \ifingather@ \restorealignst...
+l.432 \end{align*}
+                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./main.tex:432: Missing $ inserted.
+<inserted text> 
+                $
+l.432 \end{align*}
+                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+./main.tex:432: Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.432 \end{align*}
+                  
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+<assets/fqca.png, id=32, 839.135pt x 740.7675pt>
+File: assets/fqca.png Graphic file (type png)
+<use assets/fqca.png>
+Package pdftex.def Info: assets/fqca.png  used on input line 434.
+(pdftex.def)             Requested size: 280.52756pt x 247.64153pt.
+./main.tex:451: Undefined control sequence.
+<argument> v_\text {gs}(i_\test 
+                                {test})
+l.451 ..._\text{gs}(i_\test{test})}{i_\text{test}}
+                                                  $
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--469
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--491
+
+ []
+
+[2 <./assets/vd.png> <./assets/REQ.png> <./assets/fqca.png>]
+<assets/DT1.png, id=40, 1519.6775pt x 584.1825pt>
+File: assets/DT1.png Graphic file (type png)
+<use assets/DT1.png>
+Package pdftex.def Info: assets/DT1.png  used on input line 500.
+(pdftex.def)             Requested size: 280.52756pt x 107.83139pt.
+<assets/DT2.png, id=41, 1415.2875pt x 682.55pt>
+File: assets/DT2.png Graphic file (type png)
+<use assets/DT2.png>
+Package pdftex.def Info: assets/DT2.png  used on input line 504.
+(pdftex.def)             Requested size: 280.52756pt x 135.28903pt.
+<assets/DT3.png, id=42, 1104.125pt x 598.235pt>
+File: assets/DT3.png Graphic file (type png)
+<use assets/DT3.png>
+Package pdftex.def Info: assets/DT3.png  used on input line 529.
+(pdftex.def)             Requested size: 280.52756pt x 151.99564pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--530
+\T1/lmr/bx/n/10 Latch vs. Flip-Flop\T1/lmr/m/n/10 : Flip-Flop: Takt-ge-steu-ert
+, rea-giert nur auf Flan-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--530
+\T1/lmr/m/n/10 ken, syn-chron. Latch: Trans-pa-rent, rea-giert auf Pe-gel, asyn
+-chron.
+ []
+
+<assets/DT4.png, id=43, 1053.9375pt x 226.8475pt>
+File: assets/DT4.png Graphic file (type png)
+<use assets/DT4.png>
+Package pdftex.def Info: assets/DT4.png  used on input line 533.
+(pdftex.def)             Requested size: 374.03674pt x 80.50891pt.
+<assets/DT6.png, id=44, 2534.46875pt x 1214.5375pt>
+File: assets/DT6.png Graphic file (type png)
+<use assets/DT6.png>
+Package pdftex.def Info: assets/DT6.png  used on input line 577.
+(pdftex.def)             Requested size: 374.03674pt x 179.22612pt.
+<assets/DT10.png, id=45, 1088.065pt x 921.4425pt>
+File: assets/DT10.png Graphic file (type png)
+<use assets/DT10.png>
+Package pdftex.def Info: assets/DT10.png  used on input line 585.
+(pdftex.def)             Requested size: 374.03674pt x 316.75914pt.
+<assets/DT7.png, id=46, 4015.0pt x 833.1125pt>
+File: assets/DT7.png Graphic file (type png)
+<use assets/DT7.png>
+Package pdftex.def Info: assets/DT7.png  used on input line 587.
+(pdftex.def)             Requested size: 374.03674pt x 77.60832pt.
+[3 <./assets/DT1.png> <./assets/DT2.png> <./assets/DT3.png> <./assets/DT4.png> 
+<./assets/DT6.png> <./assets/DT10.png> <./assets/DT7.png>]
+Underfull \hbox (badness 7186) in paragraph at lines 603--604
+[][]\T1/lmr/bx/n/10 Partitioning[]\T1/lmr/m/n/10 : Zer-legt Multiple-Input/Mult
+iple-Output-Netzwerke in Multiple-
+ []
+
+./main.tex:619: Double superscript.
+l.619 ...durch die maximale Input Anzahl (da $2^2^
+                                                  n$ schnell explodiert)
+I treat `x^1^2' essentially like `x^1{}^2'.
+
+<assets/DT8.png, id=57, 1961.3275pt x 622.325pt>
+File: assets/DT8.png Graphic file (type png)
+<use assets/DT8.png>
+Package pdftex.def Info: assets/DT8.png  used on input line 677.
+(pdftex.def)             Requested size: 374.03674pt x 118.67978pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--683
+[]|\T1/lmr/m/n/10 Direkte Stern-Verbindung von ei-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 683--683
+[]|\T1/lmr/m/n/10 Minimale Si-gnal-ver-zö-ge-
+ []
+
+
+Underfull \hbox (badness 5091) in paragraph at lines 685--685
+[]|\T1/lmr/m/n/10 Rectilinear Stei-ner Mi-ni-mum Tree:
+ []
+
+
+Overfull \hbox (86.33492pt too wide) in paragraph at lines 679--687
+[][] 
+ []
+
+<assets/DT9.png, id=58, 1479.5275pt x 600.2425pt>
+File: assets/DT9.png Graphic file (type png)
+<use assets/DT9.png>
+Package pdftex.def Info: assets/DT9.png  used on input line 695.
+(pdftex.def)             Requested size: 374.03674pt x 151.7455pt.
+[4 <./assets/DT8.png> <./assets/DT9.png>] (./main.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 8456 strings out of 473190
+ 129591 string characters out of 5715801
+ 771966 words of memory out of 5000000
+ 31557 multiletter control sequences out of 15000+600000
+ 619827 words of font info for 76 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,17n,69p,458b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texliv
+e/2025/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/local/texlive/2025/texm
+f-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fon
+ts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
+ublic/lm/lmmi5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lm
+mi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/te
+xlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/
+texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2025/texmf-dist/f
+onts/type1/public/lm/lmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/p
+ublic/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr
+i10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri7.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/t
+exlive/2025/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2025
+/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on main.pdf (4 pages, 1862669 bytes).
+PDF statistics:
+ 154 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

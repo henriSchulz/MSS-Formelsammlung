@@ -1,0 +1,708 @@
+
+\documentclass[8pt, landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{ragged2e} % Für besseren Textumbruch in X-Spalten
+\usepackage[table]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[table]{xcolor}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{titlesec}
+\usepackage{etoolbox}
+
+\AtBeginEnvironment{tabularx}{\footnotesize}
+
+
+% Seitenränder anpassen für maximale Ausnutzung
+\geometry{a3paper, left=1cm, right=1cm, top=1cm, bottom=1cm, landscape}
+\setlength{\parindent}{0pt}
+
+% --- C++ Style for listings ---
+\lstdefinestyle{cpp_style}{
+    language=C++,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{purple},
+    commentstyle=\color{gray},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    showstringspaces=false,
+    backgroundcolor=\color{lightgray!10} % A very light gray background
+}
+\lstset{style=cpp_style}
+
+\lstdefinelanguage{ST}{
+  morekeywords={VAR,END_VAR,IF,THEN,ELSE,FOR,TO,DO,END_IF,END_FOR, TYPE, STRUCT, END_TYPE, STR, INT, BOOL, REAL, TRUE, FALSE, END_STRUCT, INT, ARRAY, OF, BY, VAR_INPUT, VAR_OUTPUT, VAR_IN_OUT, FUNCTION, FUNCTION_BLOCK, END_FUNCTION, END_FUNCTION_BLOCK, RETURN, CASE, OF, END_CASE, ELSIF},
+  sensitive=true,
+  morecomment=[l]{(*},
+  morecomment=[s]{(*}{*)},
+  morestring=[b]",
+}
+% ST Style ohne Zeilennummern
+\lstdefinestyle{st_style}{
+    language=ST,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{teal}\bfseries,
+    stringstyle=\color{purple},
+    commentstyle=\color{gray},
+    numbers=none,
+    breaklines=true,
+    showstringspaces=false,
+    backgroundcolor=\color{lightgray!10}
+}
+
+
+\titleformat{\section}
+    {\normalfont\large\bfseries} % Kleiner: "large" statt "Large"
+    {\thesection}
+    {0.6em} % Weniger Abstand nach Nummer
+    {}
+
+\titleformat{\subsection}
+    {\normalfont\normalsize\bfseries} % Kleiner: "normalsize" statt "large"
+    {\thesubsection}
+    {0.6em}
+    {}
+
+\titlespacing*{\section}
+    {0pt}
+    {0.5ex plus 0.3ex minus .1ex} % Weniger Abstand davor
+    {0.2ex plus .1ex}             % Weniger Abstand danach
+
+\titlespacing*{\subsection}
+    {0pt}
+    {0.3ex plus 0.2ex minus .1ex}
+    {0.3ex plus .1ex}
+
+
+
+% Eigene Befehle für Hervorhebungen
+\newcommand{\formel}[1]{\ensuremath{#1}}
+\newcommand{\algo}[1]{\textbf{\textcolor{blue!60!black}{#1}}}
+\newcommand{\datastruct}[1]{\textbf{\textcolor{red!60!black}{#1}}}
+\newcommand{\SubItem}[1]{
+    {\setlength\itemindent{15pt} \item[-] #1}
+}
+
+\setlist{nosep, leftmargin=*}
+\setlength{\columnsep}{0.7cm}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\setlength{\columnsep}{8pt}
+\begin{multicols*}{3}
+
+\section{Grundgleichungen}
+
+$$V_{\text{Ov}} = \begin{cases}
+    V_{GS} - V_{Th} & \text{NMOS} \\
+    |V_{GS}| - |V_{Th}| & \text{PMOS}
+\end{cases}$$
+
+% Triodenbereich (Linearer Bereich)
+% Bedingung: |V_DS| < |V_OV|
+\algo{Triodenbereich ($|V_DS| < |V_OV|$):} \\
+$$I_{D} = \begin{cases} 
+    \mu_n C_{ox} \frac{W}{L} \left( V_{OV} V_{DS} - \frac{1}{2}V_{DS}^2 \right) & \text{NMOS} \\
+    \mu_p C_{ox} \frac{W}{L} \left( |V_{OV}| |V_{DS}| - \frac{1}{2}V_{DS}^2 \right) & \text{PMOS}
+\end{cases}$$
+
+\vspace{1em} % Abstand
+
+% Sättigungsbereich
+% Bedingung: |V_DS| \ge |V_OV|
+\algo{Sättigungsbereich ($|V_DS| \ge |V_OV|$):} \\
+$$I_{D} = \begin{cases} 
+    \frac{1}{2} \mu_n C_{ox} \frac{W}{L} V_{OV}^2 & \text{NMOS} \\
+    \frac{1}{2} \mu_p C_{ox} \frac{W}{L} |V_{OV}|^2 & \text{PMOS}
+\end{cases}$$
+\algo{Transkonduktanz ($g_m$):} \\
+$$g_m = \left . \frac{\partial I_D}{\partial V_{GS}}\right|_{V_{DS}=\text{const.}} = \mu \cdot C_{ox} \frac{W}{L} V_{\text{Ov}} = \sqrt{2 \cdot \mu \cdot C_{ox} \cdot \frac{W}{L} \cdot I_D}$$
+\algo{Ausgangwiederstand ($r_o$) }
+$$r_o = \left(\frac{\partial I_D}{\partial V_{DS}}\right)^{-1} \approx \frac{1}{\lambda \cdot I_D}$$
+\algo{Einschaltwiederstand}
+$$R_{on} \approx \frac{\partial I_D}{\partial V_{GS}} \approx \frac{1}{\mu \cdot C_{ox} \frac{W}{L} V_{\text{Ov}}} = \frac{1}{g_m}$$
+\algo{Thresholdspannung ($V_{Th}$):} \\
+$$V_{Th0} =V_{FB} + 2 \underbrace{\frac{kT}{q_e} \cdot \ln\left(\frac{N_A}{n_i}\right)}_{=\Phi_F} + \frac{\overbrace{\sqrt{4q_e \cdot \epsilon_r \cdot |\Phi_F| \cdot N_A}}^{Q_\text{dep}}}{C_\text{ox}}$$
+$$V_{Th} = V_{Th0} + \gamma (\sqrt{2 \Phi_F + V_{BS}} - \sqrt{2 \Phi_F})$$
+\algo{Body Effect} \\
+$$\gamma = \frac{\sqrt{2q_e \epsilon_r N_\text{sub}}}{C_\text{ox}}$$
+$$g_{mb} = \frac{\partial I_D}{\partial V_{BS}} = \m_n \cdot C_{ox} \frac{W}{L} (V_{GS} - V_{Th})\left(-\frac{\partial V_{Th}}{\partial V_{BS}}\right) =  \eta \cdot g_m$$
+
+\algo{Parasitäre Kapazitäten}
+
+\begin{center}
+
+\renewcommand{\arraystretch}{2.2} % Mehr Platz für die Brüche
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Name} & \textbf{Wert in Sättigung} & \textbf{Wert im Triodenbereich} \\ \hline
+$C_{gs}$ & $\frac{2}{3} WLC_{ox} + WL_{ov}C_{ox}$ & $\frac{1}{2} WLC_{ox} + WL_{ov}C_{ox}$ \\ \hline
+$C_{gd}$ & $WL_{ov}C_{ox}$ & $\frac{1}{2} WLC_{ox} + WL_{ov}C_{ox}$ \\ \hline
+$C_{db}$ & $\frac{C_{db0}}{\sqrt{1 + \frac{V_{DB}}{\phi_0}}}$ & $\frac{C_{db0}}{\sqrt{1 + \frac{V_{DB}}{\phi_0}}}$ \\ \hline
+\end{tabular}
+\end{center}
+
+
+\includegraphics[width=0.7\linewidth]{assets/p-cap.png}
+
+\section{Single-Stage Amplifiers}
+\algo{Diode-Connected MOSFET}
+$$r_x = \frac{v_x}{i_x} = \frac{1}{g_m + \frac{1}{r_o} + g_{mb}} = \frac{1}{g_m} \parallel r_o \parallel \frac{1}{g_{mb}}$$
+\begin{center}Unter der Annahme $r_o \gg \frac{1}{g_m}$\end{center}
+$$\boxed{r_x \approx \frac{1}{g_m + g_{mb}}}$$
+
+\algo{Verstärkergrundschaltungen}
+\begin{center}
+\renewcommand{\arraystretch}{2.2}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Amp} & \textbf{$|A_v|$} & \textbf{$R_{out,tr}$} & \textbf{$R_{out,ges}$}  \\ \hline
+CS & $g_m (r_o \parallel R_D)$ & $r_o$ & $r_o \parallel R_D$  \\ \hline
+CD & $\frac{g_m R_S}{1 + (g_m + g_{mb})R_S}\approx 1$ & $\frac{1}{g_m + g_{mb}} \parallel r_o$ & $R_{out,tr} \parallel R_S$  \\ \hline
+CG & $(g_m + g_{mb}) (R_{out,tr} \parallel R_D)$ & $r_o(1 + (g_m + g_{mb}) R_S) + R_S$ & $R_{out,tr} \parallel R_D$   \\ \hline
+Cascode & $g_{m1} (R_{out,tr} \parallel R_D)$ & $(g_{m2} r_{o2} r_{o1})$ & $R_{out,tr} \parallel R_D$ \\ \hline
+\end{tabular}
+\end{center}
+$R_{in,CG=\frac{1}{g_m + g_{mb}}}$. Allgemein bei Kaskoden Schaltungen : $R_\text{out} = R_\text{up} || R_\text{down}$
+\\\\
+\algo{CS-Stufe mit Gegenkopplung}
+\begin{center}
+\renewcommand{\arraystretch}{2.8}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Amp} & \textbf{$|A_v|$} & \textbf{$R_\text{out,tr}$} & \textbf{$R_\text{out,ges}$} \\ \hline
+
+\begin{tabular}[c]{@{}l@{}}CS + St.\\[-2pt] \footnotesize{($R_S$)}\end{tabular}
+& $\dfrac{g_m\, (R_\text{out,tr} \parallel R_D)}{1 + (g_m + g_{mb})\,R_S}$
+& $r_o\bigl[1 + (g_m + g_{mb})\,R_S\bigr] + R_S$
+& $R_\text{out,tr} \parallel R_D$ \\ \hline
+
+\begin{tabular}[c]{@{}l@{}}CS + Sp.\\[-2pt] \footnotesize{($R_F$)}\end{tabular}
+& $g_m\,(r_o \parallel R_D \parallel R_F)$
+& $r_o$
+& $r_o \parallel R_D \parallel R_F$ \\ \hline
+
+\end{tabular}
+\end{center}
+
+\algo{Folded Cascode}
+\begin{itemize}
+    \item Immer jeweils ein PMOS und ein NMOS Transistor.
+    \item Realisiertbar mit PMOS-Input (Current Sink unten) oder NMOS-Input (Current Source oben). 
+    \item Mit $R_D$: $A_v \approx -g_{m1} \cdot (g_{m2} r_{o2}r_{o1} \parallel R_D)$
+    \item Mit Aktiver Last: $A_v \approx -g_{m1} \cdot ([g_{m3} r_{o3}(r_{o1} \parallel r_{o2} )] \parallel r_{04})$
+\end{itemize}
+\includegraphics[width=0.5\linewidth]{assets/fcan.png}
+
+
+
+
+
+
+\section{Noise}
+Leistungsdichtespektrum (PSD) $= S_v(f), \quad$ SNR $= \frac{P_{signal}}{P_{noise}}$ \\
+Gesamtrauschleistung: $P_n = \int_0^\infty S_v(f) df$ \\
+
+
+\algo{Thermisches Rauschen Widerstand}
+$$\overline{i_n^2} = \frac{4kT}{R} \left[\frac{A^2}{Hz}\right]$$
+$$\overline{v_n^2} = 4kTR \left[\frac{V^2}{Hz}\right]$$
+
+\algo{Thermisches Rauschen MOSFET}
+$$\overline{i_n^2} = 4kT \gamma g_m \left[\frac{A^2}{Hz}\right]$$
+
+$$\overline{v_{n,in}^2} = \frac{\overline{v_{n,out}^2}}{|A_v|^2}$$
+$$\overline{v_{n,out}^2} = \overline{i_{n,out}^2} \cdot R_{out}^2$$
+
+Rauschen in den Grundschaltungen:
+
+\begin{enumerate}
+    \item Alle Rauschströme fließen undabhängig durch den Ausgangsknoten: $\overline{i_{n,out}^2} = \text{Summe der Einzelrauschströme}$
+    \item Rauschspannung berechnen: $\overline{v_{n,out}^2} = \overline{i_{n,out}^2} \cdot R_{out}^2$
+    \item Eingangsrauschspannung berechne: $\overline{v_{n,in}^2} = \frac{\overline{v_{n,out}^2}}{|A_v|^2}$
+    \item Ergebnis bei allen Grundschaltungen: $\boxed{\overline{v_{n,in}^2} = \frac{4kT\gamma }{g_m} + \frac{4kT}{g_m^2 \cdot R}}$
+\end{enumerate}
+
+Rauschen in einer Kaskode:
+\begin{itemize}
+    \item \textbf{M1 (Eingang):} Dominanter Beitrag. $\overline{v_{n,in,M1}^2} \approx \frac{4kT\gamma}{g_{m1}}$
+    \item \textbf{M2 (Kaskode):} \textbf{Vernachlässigbar}, da der Rauschstrom von M2 durch den hohen Ausgangswiderstand $r_{o1}$ von M1 unterdrückt wird.
+    \item \textbf{Last:} Trägt signifikant bei.
+\end{itemize}
+
+$$\overline{i_{n,out,total}^2} = \overline{i_{n,in,M1}^2} + \overline{i_{n,in,Load}^2}$$
+$$\overline{v_{n,out,total}^2} = \overline{i_{n,out,totel}^2} \cdot R_{out}^2$$
+$$\overline{v_{n,in,Load}^2} = \frac{\overline{i_{n,out,totel}^2}}{g_{m1}^2}$$
+
+
+Allgemein: Bei Kaskodenschaltungen ist der Rauschstrom des 2. Transistors durch den hohen Ausgangswiderstand des 1. Transistors unterdrückt. 
+Deswegen kann man diesen vernachlässigen.
+
+
+
+
+
+\section{Differenzverstärker}
+Gegentakt: $V_{id} = V_{in1} - V_{in2}$ \\
+Gleichtakt: $V_{in,CM} = \frac{V_{in1} + V_{in2}}{2}$ \\
+$V_{in1} = V_{in,CM} + \frac{V_{id}}{2}$, $V_{in2} = V_{in,CM} - \frac{V_{id}}{2}$
+
+\algo{Verstärkung} \\
+Gegen: $|A_d| = |\frac{V_{out}}{V_{id}}| = g_m \cdot (R_D || r_o)$ \\
+\textcolor{red}{bei aktiver Last: $r_{o1/2} || r_{o3/4}$} \\
+Gleich: $|A_{CM}| = |\frac{V_{out}}{V_{CM}}| \approx \frac{R_D}{2 R_{SS}}$ \quad ($V_{in1} = V_{in2} = V_{CM}$)
+
+\algo{Eigenschaften} \\
+Gegentakt: Virtuelle Masse im Source Knoten \\
+Gleichtakt: Halbschaltung mit $1 \times I, \quad 2 R_{SS}$ \\
+CMRR $= \frac{|A_d|}{|A_{CM}|} \approx 2 g_m R_{SS}$
+
+\algo{Cascode + Cascode Load}
+$$|A_d| = g_m [ (g_{m3} r_{o3} r_{o1}) || (g_{m5} r_{o5} r_{o7}) ]$$
+
+
+\section{Stromquellen}
+\datastruct{Einfachste Methode: Spannungsteil}
+$$I_{out} \approx \frac{1}{2} \mu_n C_{ox} \frac{W}{L} \left(\frac{R_1}{R_1+R_2}\cdot V_DD - V_{TH}\right)^2$$
+\includegraphics[width=0.3\linewidth, height=0.3\linewidth]{assets/vd.png}
+Nachteile: Nicht PVT stabil, da $V_{TH}$ und $V_{DD}$ variieren können.
+\algo{Stromspiegel}
+$$I_\text{OUT} = I_\text{REF} \cdot \frac{(W/L)_\text{OUT}}{(W/L)_\text{REF}}$$
+Fehlanpassungen in Stromspiegeln entstehen durch Prozessvariationen wie Maskenfehlausrichtung, Lithografieschwankungen und Diffusions-/Ätzeffekte, die zu Unterschieden in der effektiven Kanalweite und -länge der Transistoren führen.
+Lösung: COMMON CENTROID LAYOUT.
+\\\\
+\algo{CLM in Stromspiegeln}
+$$
+\frac{I_{OUT}}{I_{REF}} = \frac{(W/L)_{OUT}}{(W/L)_{REF}} \cdot \underbrace{\frac{(1+\lambda V_{DS,OUT})}{(1+\lambda V_{DS,REF})}}_{\text{Mirror Error}}
+$$
+\algo{Cascode Current Mirrors}
+Wenn $V_{DS,OUT} \approx V_{DS,REF}$, dann ist die Mirror Error minimal und der Stromspiegel präziser.
+$$
+V_B = V_{GS4} + V_X\\
+V_Y = V_B-V_{G_GS4}\\
+\implies = V_Y =V_X
+$$
+
+$I_\text{OUT}$ hängt nur wenig von $V_\text{OUT}$ ab, da die Kaskode einen sehr hohen Ausgangswiderstand hat.
+$$
+\Delta I_{OUT} = \Delta \frac{V_{OUT}}{R_\text{OUT}}
+$$
+$$
+V_\text{OUT,min} = 2\cdot V_\text{Ov}
+$$
+
+Wenn der Bias-($V_B$) durch einen weiteren Transistor M3 erzeugt wird:
+
+
+
+\boxed{V_{OUT_{min}} = V_{TH} + 2V_{OV}}
+$$
+
+\section{Stromreferenzen}
+
+\section{Frequenzgang}
+
+
+
+$$
+BW = f_H - f_L
+$$
+
+$$
+GBW = |A_M| \cdot BW
+$$
+
+$$
+H(s) = \left. \frac{(1 + \frac{s}{\omega_z_1})(1 + \frac{s}{\omega_z_2})...(1 + \frac{s}{\omega_z_n})}{(1 + \frac{s}{\omega_p_1})(1 + \frac{s}{\omega_p_2})...(1 + \frac{s}{\omega_p_m})} \right|_{s = j\omega}
+$$
+\begin{itemize}
+\item \algo{Polstellen}: Amplitude: -3-dB, -20dB / Dekade, Phase: -45° asymptotisch zu -90°
+\item \algo{Nullstellen}: Amplitude: +3-dB, +20dB / Dekade, Phase: +45° asymptotisch zu +90°
+\item \algo{Dominantenpolapproximation}: Die Frequenzen liegen weit genug auseinander, sodass die Pole undabängig voneinander betrachtet werden können. 
+\end{itemize}
+\\
+\algo{Miller Theorem}
+
+$$
+Z_1 = \frac{Z}{1-A}, \quad Z_2 = \frac{Z}{1-\frac{1}{A}} 
+$$
+
+\datastruct{Frequenzgang einer CS-Stage}
+
+$$
+\text{Niedrige Frequenzen}: \begin{cases}
+f_L1 = \frac{1}{2\pi C_{C_1} (R_\text{Sig} + R_G)} & \text{Eingangskoppelkondensator} \\
+f_L2 = \frac{1}{2\pi C_{C_2} ((r_0 \parallel R_D) + R_L)} & \text{Ausgangskoppelkondensator} \\
+\end{cases}
+$$
+
+$$
+\text{Hohe Frequenzen}: \begin{cases}
+f_H1 = \frac{1}{2\pi(R_\text{Sig} || R_G)C_\text{in}} & \text{Eingangskapazität} \\
+f_H2 = \frac{1}{2\pi(r_0 \parallel R_D \parallel R_L)C_\text{out}} & \text{Ausgangskapazität} \\
+\end{cases}
+$$
+
+mit $C_\text{in} = C_{gs} + (1-A_0)C_{gd}$ und $C_\text{out} = (1-\frac{1}{A_0})C_{gd} + C_{db}$
+
+
+$$\text{Nullstelle}: f_Z = \frac{g_m}{2\pi C_{gd}}$$
+$$\text{Übergangsfrequqnz}: f_T = \frac{g_m}{2\pi(C_{gs} + C_{gd})}$$
+\\
+\algo{OCTC}
+Vorgegen: Für jeden Kondensator einzeln die Zeitkonstante berechnen, dabei die anderen Kondensatoren, Quellen entfernen.
+$$f_H = \frac{1}{2\pi (\tau_1 + \tau_2 + \dots)}$$
+
+\datastruct{OCTC: CS-Stage}
+
+\begin{align*}
+  R'_\text{Sig} &= R_\text{Sig} \| R_G \\
+  R'_L &= R_L \| r_0 \| R_D \\[6pt]
+  \tau_1 = R_{C_{gs}} \cdot C_{gs} &= \bigl(R_\text{Sig} \| R_G\bigr) \cdot C_{gs} \\
+  \tau_2 = R_{C_{gd}} \cdot C_{gd} &= \frac{v_x}{i_x} \cdot C_{gd} = \bigl(R'_\text{Sig}(1 + g_m R'_L) + R'_L\bigr) \cdot C_{gd} \\
+  \tau_3 = R_{C_{db}} \cdot C_{db} &= \bigl(R'_L\bigr) \cdot C_{db}
+\end{align*}
+
+
+\datastruct{OCTC: CG-State}
+\begin{align*}
+
+  R'_L &= R_D \| R_L \\
+
+  \tau_1 = R_{C_{gs}} \cdot C_{gs}
+  &= (R_{\text{sig}} \| R_{\text{eq}}) \cdot C_{gs}
+  = \left( R_{\text{sig}} \| \frac{r_0 + R'_L}{1 + g_m r_0} \right) \cdot C_{gs} \\
+
+  C'_L &= C_{gd} + C_{db} \\
+
+  \tau_2 = R_{C'_L} \cdot C'_L
+  &= \frac{v_x}{i_x} \cdot C'_L
+  = (R'_L \| \underbrace{g_m R_{\text{sig}} r_0}_{\text{Wie bei Kaskode}}) \cdot (C'_L)
+\end{align*}
+
+\includegraphics[width=0.75\linewidth]{assets/REQ.png}
+
+\datastruct{OCTC: Cascode}
+
+\begin{align*}
+  R_{d1} &= r_{o1} \| R_{\text{in2}} \\
+  R_{\text{in2}} &= \frac{r_{o2} + R_L}{1 + g_{m2} r_{o2}} \\
+  R_o &= g_{m2} r_{o2} r_{o1} + r_{o1} + r_{o2} \\
+
+  \tau_1 = R_{C_{gs1}} \cdot C_{gs1}
+  &= (R_{\text{sig}}) \cdot C_{gs1} \\
+
+  \tau_2 = R_{C_{gd1}} \cdot C_{gd1}
+  &= \frac{v_x}{i_x} \cdot C_{gd1}
+  = \left( g_{m1} R_{d1} R_{\text{sig}} + R_{\text{sig}} + R_{d1} \right) \cdot C_{gd1} \\
+
+  R_{d1} = r_{o1} \| R_{\text{in2}} &= r_{o1} \| \frac{r_{o2} + R_L}{1 + g_{m2} r_{o2}} \quad \text{Vgl. CG: } R_{C_{gs}} \\
+
+  \tau_3 = R_{C_{d1}} \cdot (C_{db1} + C_{gs2})
+  &= (R_{d1}) \cdot (C_{db1} + C_{gs2}) \\
+
+  R_o \approx g_{m2} r_{o2} r_{o1} \quad \text{Vgl. Kaskode Ausgangswiederstand} \\
+
+  \tau_4 = R_{C_{out}} \cdot (C_L + C_{gd2} + C_{db2})
+  &= (R_o \| R_L) \cdot (C_L + C_{gd2} + C_{db2})
+\end{align*}
+
+\includegraphics[width=0.75\linewidth]{assets/fqca.png}
+
+\section{Feedback}
+
+$$H = \frac{A}{1 + AF}\quad\quad T = AF (\text{Return Ratio})$$
+
+$$H = H_{\infty} \cdot \frac{1}{1+T} + H_0 \cdot \frac{1}{1+T}$$
+($g_m \to \infty$)\\
+\textbf{$H_\infty$ berechnen}:
+Verstärker durch idealen OPA ersetzen
+$$H_\infty = \lim_{A_0 \to \infty} \frac{v_\text{out}}{v_\text{in}}$$
+\textbf{$T$ berechnen}:
+
+\begin{itemize}
+    \item $v_\text{in} = 0$, Spannungsquellen=Kurzschluss, Stromquellen=Leerlauf
+    \item $i_\text{test}$ an die stelle von $g_m  /cdot v_{gs}$ setzen.
+    \item $v_{gs}$ in Abhängigkeit von $i_\text{test}$ berechnen.
+    \item $T = -\frac{i_\text{returned}}{i_\text{test}} = -\frac{v_\text{gs}(i_\test{test})}{i_\text{test}}$
+\end{itemize}    
+
+\section{Stabilität}
+
+$$\text{Polstellen}: s^2 + s\frac{\omega_0}{Q} + \omega_0^2 = 0\quad\quad \zeta = \frac{1}{2Q}$$
+
+$$s^2 \tau_1\tau_2 + s(\tau_1 + \tau_2 + 1)$$
+
+$$\text{Komplex konjugierte Polstellen wenn: } (\tau_1 + \tau_2)^2 < 4\tau_1\tau_2$$
+
+$$\text{Durchlassspannungsverstärkung}: \lim_{s\to\infty}H(s)$$
+
+$$\text{Filter 2. Ordnung}: H(s) = \frac{A_0}{(1+\frac{s}{\omega_{p2}})(1+\frac{s}{\omega_{p2}})}$$
+
+\textbf{Barkhausenkriterium}: Das System wird instabil, $|AF| = 1$ und $\text{arg}\{AF\} = n \cdot \pi$
+\\\\
+\algo{Transitfrequenz $f_T, f_{unity-gain}$ berechnen} 
+
+$$f_T = 2\pi\omega_T$$
+Allgemein gilt: $|H(\omega_T)| = 1$
+
+\datastruct{1. Fall:}: Die Pole liegen weit genug auseinander (Dominantenpolapproximation):
+
+$$\omega_T\approx \begin{cases}
+
+      A_0 \cdot f_{p1} & \text{wenn zwischen den Polen} \\
+      \sqrt{A_0} \cdot \omega_{p1}$$ & \text{wenn oberhalb der Pole}
+    
+\end{cases}$$
+
+\datastruct{2. Fall:} Die Pole liegen ineinander (doppelter Pol):
+$$\omega_T \approx \sqrt{A_0} \cdot \omega_{p1}$$
+
+\datastruct{3. Fall:} Pole liegen zu nah beieinander
+
+$$\omega_T \approx \sqrt{A_0} \cdot \sqrt{\omega_{p1} \cdot \omega_{p2}} \quad\quad \text{oberhalb der Pole}$$
+\\\\
+\algo{Phasenreserve}
+Abstand der Phase zu -180° bei der Transitfrequenz $\omega_T$.
+$$
+\quad PM = \pi + \text{arg}\{H(\omega_T)\} = \pi - \arctan\left(\frac{\omega_T}{\omega_{p1}}\right) - \arctan\left(\frac{\omega_T}{\omega_{p2}}\right)
+$$
+
+\algo{Miller Kondensator}: ermöglicht eine platzsparende Stabilisierung von Verstärkern durch künstliche Kapazitätsvergrößerung, erkauft dies jedoch durch eine deutliche Verringerung der Bandbreite bei hohen Frequenzen. 
+
+
+\section{Digitaltechnik}
+$$f(x_4,x_3,x_2,x_1,x_0)$$
+\includegraphics[width=0.75\linewidth]{assets/DT1.png}
+\\
+\algo{Sequenzielle Schaltung vs. Kombinatorische Schaltung}: Kombinatorische Schaltungen bestehen aus zyklenfreien Verbindungen rein kombinatorischer Schaltungselemente, bei denen jeder Knoten eindeutig als Input oder mit genau einem Output verbunden ist. Im Gegensatz dazu nutzen sequentielle Schaltungen diese Elemente als Basis, enthalten jedoch zyklische Pfade mit taktgesteuerten Registern zur Zustandsspeicherung.
+\subsection{Timing}
+\includegraphics[width=0.75\linewidth]{assets/DT2.png}
+
+
+\begin{enumerate}
+    \item \algo{Contamination Delay}: Mindestzeit zur Inputänderung
+    \item \algo{Propagation Delay}: Maximalzeit zur Inputänderung
+    \item \algo{Kritischer Pfad}: Längster Pfad in Schaltung mit PD rechnen
+    \item \algo{Kürzester Weg}: Mit CD rechnen
+    \item \algo{Glitch}: Unterschiedliche Pfadlängen führen zu mehreren Outputänderungen
+    \item \algo{Aperture Time}: Setup Time + Hold Time
+    \item \algo{Dynamic Discipline}: Alle Inputs einer synchronen sequentiellen Schaltung müssen während der Setup- und Hold-Zeiten in Bezug auf die Flanken des Clocksignals stabil sein
+    \item \algo{Metastabilität}:  Wenn die Dynamic Discipline verletzt wird, ist der Output eines Flipflops undefiniert und kann eine Spannung zwischen 0 und $V_{DD}$ annehmen. Lösung: ein Synchronizer.
+\end{enumerate}
+
+$$T_C\geq t_{pcq} + t_{pd} + t_{setup} + t_{skew}$$
+
+$$t_{ccq} + t_{cd} \geq t_{hold} + t_{skew}$$
+
+$$P(\text{failure}) = P(t_{tes} > T_C - t_{setup}) = \frac{t_{setup} + t_{hold}}{T_C}\cdot e^{-\frac{T_C - t_{setup}}{\tau}}$$
+
+$$
+\text{MTBF} = \frac{T_C \cdot e^{\frac{T_C - t_{setup}}{\tau}}}{N(t_{setup} + t_{hold})}
+$$
+\subsection{FlipFlops}
+\textbf{Latch vs. FlipFlop}: FlipFlop: Taktgesteuert, reagiert nur auf Flanken, synchron. Latch: Transparent, reagiert auf Pegel, asynchron.
+\includegraphics[width=0.75\linewidth]{assets/DT3.png}
+
+\subsection{Finite State Machine (FSM)}
+
+\includegraphics[width=\linewidth]{assets/DT4.png}
+
+\subsubsection{Digital Building Blocks}
+
+\subsubsection{Volladdierer}
+$$S = A \oplus B \oplus C_{in}$$
+
+$$C_{out} = (A \cdot B) + (B \cdot C_{in}) + (A \cdot C_{in})$$
+
+$$t_{\text{pd-N-ripple-carry-adder}} = N \cdot t_{\text{pd-full-adder}}$$
+
+\subsection{Carry Look-Ahead Adder}
+
+\begin{itemize}
+    \item \textbf{Generate}: $G_i = A_i \cdot B_i$ (Wird ein Carry generiert, unabhängig von $C_{in}$)
+    \item \textbf{Propagate}: $P_i = A_i \oplus B_i$ (Wird ein Carry weitergeleitet, wenn $C_{in}$ vorhanden ist
+\end{itemize}
+
+
+\begin{align*}
+C_{i+1} &= G_i + (P_i C_i) \\
+C_1 &= G_0 + (P_0 C_{in}) \\
+C_2 &= G_1 + (P_1 C_1) = G_1 + P_1 G_0 + P_1 P_0 C_{in} \\
+C_3 &= G_2 + (P_2 C_2) = G_2 + P_2 G_1 + P_2 P_1 G_0 + P_2 P_1 P_0 C_{in} \\
+C_4 &= G_3 + (P_3 C_3) = G_3 + P_3 G_2 + P_3 P_2 G_1 + P_3 P_2 P_1 G_0 + P_3 P_2 P_1 P_0 C_{in}
+\end{align*}
+
+\subsubsection{Komparatoren}
+
+\begin{itemize}
+    \item \algo{Gleichheit} prüfen: $XNOR$ aller Bits, dann $AND$ aller Ergebnisse
+    \item \algo{Größer-gleich, Kleiner-als} prüfen: Substraktion durchführen, dann Vorzeichenbit prüfen:  ($Y[N-1] = 0 \implies A \geq B, Y[N-1] = 1 \implies A < B$)
+\end{itemize}
+
+\algo{Overflow prüfen}:
+
+$$
+\begin{cases}
+    (\text{sign}(A) = \text{sign}(B)) \land (\text{sign}(A+B) \neq \text{sign}(A)) & \text{Overflow bei Addition} \\
+    (\text{sign}(A) \neq \text{sign}(B)) \land (\text{sign}(A-B) \neq \text{sign}(A)) & \text{Overflow bei Subtraktion}
+\end{cases}
+$$
+
+\subsubsection{Multiplizierer \& Dividierer}
+\includegraphics[width=\linewidth]{assets/DT6.png}
+
+\subsubsection{ALU}
+\algo{Flags}: Z: Alle Bits 0, N: Vorzeichenbit, C: Carry, V: Overflow
+\subsection{RAM}
+\algo{Volatile vs. Nonvolatile}: Volatile (RAM) verlieren Daten ohne Stromversorgung. Nonvolatile (ROM) behalten Daten (z.B.: ROM).
+\algo{DRAM}: Speichert Bits als Ladung auf Kondensator. Benötigt regelmäßiges Refresh (ms-Bereich).
+\algo{SRAM}: Speichert Bits mit kreuzgekoppelten Invertern. Statisch, kein Refresh nötig.
+\includegraphics[width=\linewidth]{assets/DT10.png}
+
+\includegraphics[width=\linewidth]{assets/DT7.png}
+
+\subsection{Technology Mapping}
+
+\algo{Technology Mapping}: Abbildung einer ungebundenen Logikschaltung auf vordefinierte gebundene (optimiere) Bibliothekselemente.
+
+\algo{Trivial Binding}: Jeder Knoten (Vertex) wird einzeln an eine passende Bibliothekszelle gebunden. Meist nicht optimal, da die ungebundene Logik ohne Berücksichtigung der Zellparameter (Fläche, Delay etc.) optimiert wurde.
+
+\algo{Leaf-DAG}: DAG mit nur einer Quelle (Root), bei dem Pfade nur an den Senken (Leafs) wieder zusammenlaufen können.
+
+\algo{Subject Graph}: Das zu mappende Subnetzwerk.
+
+\algo{Pattern Graph}: Der Graph, der mit einer Bibliothekszelle assoziiert ist.
+
+\algo{Decomposition (Zerlegung)}: Wandelt boolesche Funktionen in Basisfunktionen um, die von der Bibliothek unterstützt werden. Ermöglicht ein Trivial Binding. Im CMOS typisch: NAND2/NOT oder NOR2/NOT.
+
+\algo{Partitioning}: Zerlegt Multiple-Input/Multiple-Output-Netzwerke in Multiple-Input/Single-Output-Netzwerke (Subject Graphs) zur Reduktion der Abdeckungskomplexität.
+
+\algo{Boolean Match}: Überprüft die funktionale Äquivalenz zweier boolescher Funktionen.
+
+\algo{Structural Match}: Überprüft strukturelle Isomorphie zwischen zwei Rooted DAGs. Strukturelles Matching impliziert Boolean Matching, aber nicht umgekehrt.
+
+\algo{Unbounded Network}: Ein Unbound Network ist eine allgemeine Logikschaltung. Sie kann auf verschieden Weise in Hardware abgebildet werden. 
+
+\algo{Bounded Network}: Bei einem Bound Network handelt es sich um eine spezifische Zuordnung zu Zellen einer Bibliothek. 
+
+
+\subsection{FPGA}
+\begin{itemize}
+\item Besteht aus \algo{Configurable logic blocks}.
+\item Jeder Block enthält Look-Up-Tables (LUTs) für die Implementierung von Logikfunktionen etc.
+\item LUT-Covering: Abdeckung eines Subject Graphs mit Pattern Graphs, die von den LUTs repräsentiert werden. Ziel: Minimierung der Anzahl benötigter LUTs.
+\item beschränkt durch die maximale Input Anzahl (da $2^2^n$ schnell explodiert)
+\algo{Area Algorithm}
+Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
+
+\textbf{Voraussetzungen:}
+\begin{itemize}
+    \item Subject Graphs (trees/leaf-DAGs) durch Partitioning
+    \item Transformation mit DeMorgan \& ANDOR-Assoziativität:
+    \begin{itemize}
+        \item Invertierte Edges nur an Leafs
+        \item Keine aufeinanderfolgenden AND-Vertices
+        \item Keine aufeinanderfolgenden OR-Vertices
+        \item Ziele: Minimale Anzahl LUT's, Minimale LUT-Input-Anzahl
+    \end{itemize}
+\end{itemize}
+\algo{Decomposition Tree}: Tree aus LUTs, der eine Decomposition des aktuellen Non-leaf Node und der Root-LUTs der aktuellen FanIn-Schaltungen darstellt
+
+\end{itemize}
+
+\subsection{Physical Design}
+
+\subsubsection{Partitioning}
+
+\begin{itemize}
+\item Das System (die Netzliste) wird in handhabbare Blöcke aufgeteilt, um Komplexität zu reduzieren. Zum Beispiel minimale Schnittstellen (cuts) zwischen Blöcken.
+\end{itemize}
+\algo{Direct-Method}:
+\begin{itemize}
+\item \datastruct{Greedy-Ansatz}: Random Start Partions, dann iterativ Knoten verschieben, um Kostenfunktion zu minimieren (z.B. Anzahl Schnittstellen).
+\item \datastruct{Nachteile}: Kann in lokalen Minima stecken bleiben, abhängig von Startpartitionierung. Nicht garantiert, dass die globale optimale Partitionierung gefunden wird.
+\end{itemize}
+\algo{Simulated-Annealing-Methode}
+\begin{itemize}
+\item Kann globales Optimum finden, da es erlaubt, temporär schlechtere Lösungen zu akzeptieren.
+\item \datastruct{Metropolis-Kriterium}: Wird verwendet, um zu entscheiden, ob eine neue Lösung angenommen wird $\text{random}[0,1] \leq \min \{1,e^{-\frac{\text{cost}(S_\text{new})- \text{cost}(S)}{T}} \}$
+\begin{tabbing}
+\quad \= \quad \= \quad \= \kill
+\( S \Leftarrow \mathit{initial\_solution} \) \\[1.5ex]
+\textbf{Repeat\{} \\[1ex]
+\> \textbf{Repeat \{} \\[1ex]
+\> \> \textcolor{teal}{\textbf{/* Find next Solution*/}} \\[1ex]
+\> \> \( S\_new \Leftarrow \textbf{rand\_move}(S) \) \\[1.5ex]
+\> \> \textbf{if random}\( [0,1] \le \textbf{min}\left\{1, e^{-\frac{\mathit{cost}(S\_new)-\mathit{cost}(S)}{T}}\right\} \) \textbf{\{} \\[1.5ex]
+\> \> \> \( S \Leftarrow S\_new \) \\[1ex]
+\> \> \textbf{\}} \\[1ex]
+\> \textbf{\} until} equilibrium at current T is reached \\[1.5ex]
+\> \( T \Leftarrow \mathit{decrease}(T) \) \\[1ex]
+\textbf{\} until} (\( T \rightarrow 0 \))
+\end{tabbing}
+
+\item Je höher die Temperatur $T$, desto höher die Wahrscheinlichkeit, eine schlechtere Lösung zu akzeptieren
+\item $\lim_{T\rightarrow 0} (\lim_{n\rightarrow \infty} P(\text{globales Optimum}) = 1)$.
+\end{itemize}
+
+\algo{Floorplanning}: Beim Floorplanning werden die groben Positionen, Formen (Seitenverhältnisse, Fläche ist vorgegeben) und I/O-Anschlüsse der funktionalen Blöcke (die Partitions) so festgelegt, dass die Chipfläche und die Leitungslängen minimiert werden.
+
+\algo{Placement}: Das Placement weist jeder Standardzelle einer Partition eine exakte Koordinate in vordefinierten, horizontalen Reihen zu. Ziel ist es, die Gesamtleitungslänge (Netzlänge zwischen Komponenten) zu minimieren und eine überlappungsfreie Anordnung unter Einhaltung von Timing-Vorgaben zu finden.
+
+\includegraphics[width=\linewidth]{assets/DT8.png}
+
+\begin{tabular}{|l|p{6cm}|p{4cm}|}
+\hline
+\textbf{Modell} & \textbf{Beschreibung / Charakteristik} & \textbf{Hauptvorteil} \\ \hline
+\textbf{Bounding Box (HPWL)} & Umfang des umschließenden Rechtecks (Half-Perimeter); berechnet als $(x_{max}-x_{min}) + (y_{max}-y_{min})$. & Extrem schnell; ideal für die Platzierungsphase. \\ \hline
+\textbf{Source-Sink Tree} & Direkte Stern-Verbindung von einer Quelle (Source) zu allen Senken (Sinks/Drains). & Minimale Signalverzögerung (Delay) pro Pfad. \\ \hline
+\textbf{Min. Spanning Tree (MST)} & Verbindet alle Terminals direkt miteinander, ohne zusätzliche Hilfsknoten zu erlauben. & Einfach zu berechnen; gute Annäherung an Drahtlänge. \\ \hline
+\textbf{Steiner Tree (RSMT)} & Rectilinear Steiner Minimum Tree: Kürzeste Verbindung unter Verwendung zusätzlicher Hilfsknoten (Steiner-Punkte). & Präziseste Annäherung an die reale Drahtlänge. \\ \hline
+\end{tabular}
+
+\algo{Routing}: Beim Routing werden die genauen Pfade für die Verbindungsleitungen zwischen den Komponenten festgelegt. Ziel ist es, die Anzahl der Leitungsüberkreuzungen zu minimieren.
+\algo{Routing Regions}: Position der für das Routing verwendeten Bereiche
+\algo{Channel}: Routing Region, die von zwei gegenüberliegenden Seiten begrenzt ist.
+\algo{Switch Box}: Routing Region, die von vier Seiten begrenzt ist.
+\algo{Global Routing}: Bestimmt die groben Pfade der Verbindungen zwischen den Komponenten, ohne genaue Leitungsführung zu spezifizieren. (Umsetzung mit Extended Channel Intersection Graphs, Maze-Routing Methode $\implies$ Lee‘s Algorithmus)
+\algo{Detailed Routing}: Legt die genauen Pfade der Verbindungen fest (geometrische Anordnung). 
+\algo{Two-layer Channel-Routing, Left-Edge-Algorithmus }
+\includegraphics[width=\linewidth]{assets/DT9.png}
+
+
+
+
+
+
+
+
+
+
+\end{multicols*}
+\end{document}
+
