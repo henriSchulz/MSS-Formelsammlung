@@ -138,7 +138,7 @@ $$I_{D} = \begin{cases}
     \frac{1}{2} \mu_p C_{ox} \frac{W}{L} |V_{OV}|^2 & \text{PMOS}
 \end{cases}$$
 \algo{Transkonduktanz ($g_m$):} \\
-$$g_m = \left . \frac{\partial I_D}{\partial V_{GS}}\right|_{V_{DS}=\text{const.}} = \mu \cdot C_{ox} \frac{W}{L} V_{\text{Ov}} = \sqrt{2 \cdot \mu \cdot C_{ox} \cdot \frac{W}{L} \cdot I_D}$$
+$$g_m = \left . \frac{\partial I_D}{\partial V_{GS}}\right|_{V_{DS}=\text{const.}} = \frac{2I_D}{V_{OV}} = \mu \cdot C_{ox} \frac{W}{L} V_{\text{Ov}} = \sqrt{2 \cdot \mu \cdot C_{ox} \cdot \frac{W}{L} \cdot I_D}$$
 \algo{Ausgangwiederstand ($r_o$) }
 $$r_o = \left(\frac{\partial I_D}{\partial V_{DS}}\right)^{-1} \approx \frac{1}{\lambda \cdot I_D}$$
 \algo{Einschaltwiederstand}
@@ -249,14 +249,14 @@ Rauschen in den Grundschaltungen:
 
 Rauschen in einer Kaskode:
 \begin{itemize}
-    \item \textbf{M1 (Eingang):} Dominanter Beitrag. $\overline{v_{n,in,M1}^2} \approx \frac{4kT\gamma}{g_{m1}}$
-    \item \textbf{M2 (Kaskode):} \textbf{Vernachlässigbar}, da der Rauschstrom von M2 durch den hohen Ausgangswiderstand $r_{o1}$ von M1 unterdrückt wird.
-    \item \textbf{Last:} Trägt signifikant bei.
+    \item \textbf{M1 (Eingang):} $\overline{i_{n,M1}^2} = 4kT\gamma g_{m1}$
+    \item \textbf{M2 (Kaskode):} Rauschstrom fließt direkt in den Ausgangsknoten $\Rightarrow$ nicht vernachlässigbar. $\overline{i_{n,M2}^2} = 4kT\gamma g_{m2}$
+    \item \textbf{M3 (Last):} $\overline{i_{n,M3}^2} = 4kT\gamma g_{m3}$
 \end{itemize}
 
-$$\overline{i_{n,out,total}^2} = \overline{i_{n,in,M1}^2} + \overline{i_{n,in,Load}^2}$$
-$$\overline{v_{n,out,total}^2} = \overline{i_{n,out,totel}^2} \cdot R_{out}^2$$
-$$\overline{v_{n,in,Load}^2} = \frac{\overline{i_{n,out,totel}^2}}{g_{m1}^2}$$
+$$\overline{v_{n,out}^2} = 4kT\gamma(g_{m1} + g_{m2} + g_{m3}) \cdot R_{out}^2$$
+
+$$\overline{v_{n,in}^2} = \frac{\overline{v_{n,out}^2}}{A_v^2} = \frac{4kT\gamma(g_{m1} + g_{m2} + g_{m3})}{g_{m1}^2} \stackrel{g_{mi}=g_m}{=} \frac{12kT\gamma}{g_m} = \frac{8kT}{g_m}$$
 
 
 Allgemein: Bei Kaskodenschaltungen ist der Rauschstrom des 2. Transistors durch den hohen Ausgangswiderstand des 1. Transistors unterdrückt. 
@@ -323,7 +323,73 @@ $$
 \boxed{V_{OUT_{min}} = V_{TH} + 2V_{OV}}
 $$
 
+\includegraphics[width=\linewidth]{assets/ANA1.png}
+
 \section{Stromreferenzen}
+\algo{Self-Biased (Bootstrapped) Current Reference}
+$$
+\left(\frac{W}{L}\right)_3 = \left(\frac{W}{L}\right)_4 \implies I_1 = I_{ref}
+$$
+$$
+V_GS1 = R \cdot I_1 = V_{TH} + \sqrt{\frac{I_1}{\frac{1}{2} \mu_n C_{ox} \left(\frac{W}{L}\right)_1}} \quad\text{für}\quad V_{G1} > V_{TH}
+$$
+$$
+I_1 = 0 \quad\text{für}\quad V_{G1} < V_{TH}
+$$
+
+\begin{itemize}
+\item Unabhängig von $V_{DD}$, da $I_1$ nur von $V_{TH}$ und den Transistoreigenschaften abhängt.
+\item Benötigt einen Start-Up Mechanismus, um sicherzustellen, dass der Stromfluss initialisiert wird, da die Schaltung sonst im Zustand $I_1 = 0$ verharren könnte.
+\end{itemize}
+\algo{Self-Biased µ-current Generator}
+% M3 and M4 matched (ignore $\lambda$)
+\[
+\left(\frac{W}{L}\right)_3 = \left(\frac{W}{L}\right)_4 
+\;\Rightarrow\; I_3 = I_4
+\]
+
+\[
+I_1 = \frac{1}{2}\mu_n C_{ox} \left(\frac{W}{L}\right)_1 
+\left( V_{GS1} - V_{TH1} \right)^2
+\]
+
+\[
+I_2 = \frac{1}{2}\mu_n C_{ox} \left(\frac{W}{L}\right)_2 
+\left( V_{GS2} - V_{TH2} \right)^2
+\]
+
+\[
+V_{GS1} = V_{GS2} + R I_2 
+\qquad \text{and} \qquad 
+V_{TH1} = V_{TH2}
+\]
+
+\[
+\sqrt{
+\frac{I_1}
+{\frac{1}{2}\mu_n C_{ox}\left(\frac{W}{L}\right)_1}
+}
+=
+\sqrt{
+\frac{I_2}
+{\frac{1}{2}\mu_n C_{ox}\left(\frac{W}{L}\right)_2}
+}
++ R I_2
+\]
+
+\[
+I_2 = I_4
+\]
+
+\begin{itemize}
+\item Unabhängig von $V_{DD}$
+\item Kleines R möglich für kleine Strom $I_2$
+\item Benötigt einen Start-Up Mechanismus.
+\end{itemize}
+
+\includegraphics[width=\linewidth]{assets/ANA2.png}
+
+
 
 \section{Frequenzgang}
 
@@ -483,6 +549,10 @@ $$
 
 \algo{Miller Kondensator}: ermöglicht eine platzsparende Stabilisierung von Verstärkern durch künstliche Kapazitätsvergrößerung, erkauft dies jedoch durch eine deutliche Verringerung der Bandbreite bei hohen Frequenzen. 
 
+\includegraphics[width=\linewidth]{assets/ANA3.png}
+
+
+
 
 \section{Digitaltechnik}
 $$f(x_4,x_3,x_2,x_1,x_0)$$
@@ -491,6 +561,8 @@ $$f(x_4,x_3,x_2,x_1,x_0)$$
 \algo{Sequenzielle Schaltung vs. Kombinatorische Schaltung}: Kombinatorische Schaltungen bestehen aus zyklenfreien Verbindungen rein kombinatorischer Schaltungselemente, bei denen jeder Knoten eindeutig als Input oder mit genau einem Output verbunden ist. Im Gegensatz dazu nutzen sequentielle Schaltungen diese Elemente als Basis, enthalten jedoch zyklische Pfade mit taktgesteuerten Registern zur Zustandsspeicherung.
 \subsection{Timing}
 \includegraphics[width=0.75\linewidth]{assets/DT2.png}
+
+
 
 
 \begin{enumerate}
@@ -503,19 +575,26 @@ $$f(x_4,x_3,x_2,x_1,x_0)$$
     \item \algo{Dynamic Discipline}: Alle Inputs einer synchronen sequentiellen Schaltung müssen während der Setup- und Hold-Zeiten in Bezug auf die Flanken des Clocksignals stabil sein
     \item \algo{Metastabilität}:  Wenn die Dynamic Discipline verletzt wird, ist der Output eines Flipflops undefiniert und kann eine Spannung zwischen 0 und $V_{DD}$ annehmen. Lösung: ein Synchronizer.
 \end{enumerate}
-
+\includegraphics[width=0.75\linewidth]{assets/DT12.png}
 $$T_C\geq t_{pcq} + t_{pd} + t_{setup} + t_{skew}$$
 
 $$t_{ccq} + t_{cd} \geq t_{hold} + t_{skew}$$
 
+\subsection{Synchronizer}
+\algo{Implementierung}: Wenn das erste Flipflop für eine gewisse Zeit in einem metastabilen Zustand
+verbleibt, hat der Output des zweiten Flipflops immer noch einen stabilen Zustand
 $$P(\text{failure}) = P(t_{tes} > T_C - t_{setup}) = \frac{t_{setup} + t_{hold}}{T_C}\cdot e^{-\frac{T_C - t_{setup}}{\tau}}$$
 
 $$
 \text{MTBF} = \frac{T_C \cdot e^{\frac{T_C - t_{setup}}{\tau}}}{N(t_{setup} + t_{hold})}
 $$
+
+
 \subsection{FlipFlops}
 \textbf{Latch vs. FlipFlop}: FlipFlop: Taktgesteuert, reagiert nur auf Flanken, synchron. Latch: Transparent, reagiert auf Pegel, asynchron.
 \includegraphics[width=0.75\linewidth]{assets/DT3.png}
+
+
 
 \subsection{Finite State Machine (FSM)}
 
@@ -574,6 +653,7 @@ $$
 \includegraphics[width=\linewidth]{assets/DT10.png}
 
 \includegraphics[width=\linewidth]{assets/DT7.png}
+\includegraphics[width=\linewidth]{assets/DT11.png}
 
 \subsection{Technology Mapping}
 
@@ -665,9 +745,9 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 
 \includegraphics[width=\linewidth]{assets/DT8.png}
 
-\begin{tabular}{|l|p{6cm}|p{4cm}|}
+\begin{tabular}{|l|p{3cm}|p{3cm}|}
 \hline
-\textbf{Modell} & \textbf{Beschreibung / Charakteristik} & \textbf{Hauptvorteil} \\ \hline
+\textbf{Modell} & \textbf{Beschreibung} & \textbf{Vorteil} \\ \hline
 \textbf{Bounding Box (HPWL)} & Umfang des umschließenden Rechtecks (Half-Perimeter); berechnet als $(x_{max}-x_{min}) + (y_{max}-y_{min})$. & Extrem schnell; ideal für die Platzierungsphase. \\ \hline
 \textbf{Source-Sink Tree} & Direkte Stern-Verbindung von einer Quelle (Source) zu allen Senken (Sinks/Drains). & Minimale Signalverzögerung (Delay) pro Pfad. \\ \hline
 \textbf{Min. Spanning Tree (MST)} & Verbindet alle Terminals direkt miteinander, ohne zusätzliche Hilfsknoten zu erlauben. & Einfach zu berechnen; gute Annäherung an Drahtlänge. \\ \hline
@@ -675,23 +755,28 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 \end{tabular}
 
 \algo{Routing}: Beim Routing werden die genauen Pfade für die Verbindungsleitungen zwischen den Komponenten festgelegt. Ziel ist es, die Anzahl der Leitungsüberkreuzungen zu minimieren.
-\algo{Routing Regions}: Position der für das Routing verwendeten Bereiche
-\algo{Channel}: Routing Region, die von zwei gegenüberliegenden Seiten begrenzt ist.
-\algo{Switch Box}: Routing Region, die von vier Seiten begrenzt ist.
-\algo{Global Routing}: Bestimmt die groben Pfade der Verbindungen zwischen den Komponenten, ohne genaue Leitungsführung zu spezifizieren. (Umsetzung mit Extended Channel Intersection Graphs, Maze-Routing Methode $\implies$ Lee‘s Algorithmus)
-\algo{Detailed Routing}: Legt die genauen Pfade der Verbindungen fest (geometrische Anordnung). 
-\algo{Two-layer Channel-Routing, Left-Edge-Algorithmus}
+\algo{Routing Regions}: Position der für das Routing verwendeten Bereiche\\
+\algo{Channel}: Routing Region, die von zwei gegenüberliegenden Seiten begrenzt ist.\\
+\algo{Switch Box}: Routing Region, die von vier Seiten begrenzt ist.\\
+\algo{Global Routing}: Bestimmt die groben Pfade der Verbindungen zwischen den Komponenten, ohne genaue Leitungsführung zu spezifizieren. (Umsetzung mit Extended Channel Intersection Graphs, Maze-Routing Methode $\implies$ Lee‘s Algorithmus)\\
+\algo{Detailed Routing}: Legt die genauen Pfade der Verbindungen fest (geometrische Anordnung). \\
+\algo{Two-layer Channel-Routing, Left-Edge-Algorithmus}:
+
 \includegraphics[width=\linewidth]{assets/DT9.png}
+\algo{Left-Edge-Algorithmus}\\
+\includegraphics[width=\linewidth]{assets/LE.png}
+\\
+\includegraphics[width=\linewidth]{assets/DR.png}
 
-
-
-
-
-
-
+\section{Spezifikation Lösungen aus der Übung}
 
 
 
 \end{multicols*}
+
+
+\includegraphics[width=0.5\linewidth]{assets/ALU.png}
+\includegraphics[width=0.5\linewidth]{assets/MUL.png}
 \end{document}
+
 
