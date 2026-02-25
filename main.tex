@@ -216,7 +216,7 @@ $R_{in,CG=\frac{1}{g_m + g_{mb}}}$. Allgemein bei Kaskoden Schaltungen : $R_\tex
     \item Mit $R_D$: $A_v \approx -g_{m1} \cdot (g_{m2} r_{o2}r_{o1} \parallel R_D)$
     \item Mit Aktiver Last: $A_v \approx -g_{m1} \cdot ([g_{m3} r_{o3}(r_{o1} \parallel r_{o2} )] \parallel r_{04})$
 \end{itemize}
-\includegraphics[width=0.5\linewidth]{assets/fcan.png}
+\includegraphics[width=\linewidth]{assets/fold.png}
 
 
 
@@ -272,9 +272,9 @@ Gleichtakt: $V_{in,CM} = \frac{V_{in1} + V_{in2}}{2}$ \\
 $V_{in1} = V_{in,CM} + \frac{V_{id}}{2}$, $V_{in2} = V_{in,CM} - \frac{V_{id}}{2}$
 
 \algo{Verstärkung} \\
-Gegen: $|A_d| = |\frac{V_{out}}{V_{id}}| = g_m \cdot (R_D || r_o)$ \\
+Gegentakt: $A_d = \frac{V_{out}}{V_{id}} = -g_m \cdot (R_D || r_o)$ \\
 \textcolor{red}{bei aktiver Last: $r_{o1/2} || r_{o3/4}$} \\
-Gleich: $|A_{CM}| = |\frac{V_{out}}{V_{CM}}| \approx \frac{R_D}{2 R_{SS}}$ \quad ($V_{in1} = V_{in2} = V_{CM}$)
+Gleichtakt: $A_{CM} = \frac{V_{out}}{V_{CM}} \approx \frac{-g_m R_D}{1 + g_m R_{SS}} \approx -\frac{R_D}{2 R_{SS}}$ \quad ($V_{in1} = V_{in2} = V_{CM}$)
 
 \algo{Eigenschaften} \\
 Gegentakt: Virtuelle Masse im Source Knoten \\
@@ -282,7 +282,7 @@ Gleichtakt: Halbschaltung mit $1 \times I, \quad 2 R_{SS}$ \\
 CMRR $= \frac{|A_d|}{|A_{CM}|} \approx 2 g_m R_{SS}$
 
 \algo{Cascode + Cascode Load}
-$$|A_d| = g_m [ (g_{m3} r_{o3} r_{o1}) || (g_{m5} r_{o5} r_{o7}) ]$$
+$$A_d = -g_m [ (g_{m3} r_{o3} r_{o1}) || (g_{m5} r_{o5} r_{o7}) ]$$
 
 
 \section{Stromquellen}
@@ -547,7 +547,7 @@ $$
 
 \algo{Miller Kondensator}: ermöglicht eine platzsparende Stabilisierung von Verstärkern durch künstliche Kapazitätsvergrößerung, erkauft dies jedoch durch eine deutliche Verringerung der Bandbreite bei hohen Frequenzen. 
 
-\includegraphics[width=\linewidth]{assets/ANA3.png}
+
 
 
 
@@ -751,6 +751,8 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 \textbf{Min. Spanning Tree (MST)} & Verbindet alle Terminals direkt miteinander, ohne zusätzliche Hilfsknoten zu erlauben. & Einfach zu berechnen; gute Annäherung an Drahtlänge. \\ \hline
 \textbf{Steiner Tree (RSMT)} & Rectilinear Steiner Minimum Tree: Kürzeste Verbindung unter Verwendung zusätzlicher Hilfsknoten (Steiner-Punkte). & Präziseste Annäherung an die reale Drahtlänge. \\ \hline
 \end{tabular}
+\\
+\includegraphics[width=\linewidth]{assets/NETMODELS.png}
 
 \algo{Routing}: Beim Routing werden die genauen Pfade für die Verbindungsleitungen zwischen den Komponenten festgelegt. Ziel ist es, die Anzahl der Leitungsüberkreuzungen zu minimieren.
 \algo{Routing Regions}: Position der für das Routing verwendeten Bereiche\\
@@ -765,16 +767,56 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 \includegraphics[width=\linewidth]{assets/LE.png}
 \\
 \includegraphics[width=\linewidth]{assets/DR.png}
+\includegraphics[width=\linewidth]{assets/HCG.png}
+\includegraphics[width=\linewidth]{assets/VCG.png}
 
-\section{Spezifikation Lösungen aus der Übung}
+\section{Sonstiges aus den Übungen}
+\subsection{Tiefpass}\\
+\includegraphics[width=0.9\linewidth]{assets/ANA3.png}
+
+$$
+H(s) = \frac{A_1A_2}{(1+sC_1R_1)(1+sC_2R_2)} \quad \omega_pi = \frac{1}{R_iC_i}
+$$
+
+\algo{Mit Millerkondensator}
+
+\includegraphics[width=0.9\linewidth]{assets/MILLER.png}
+
+$$
+C_{in} = C_{Miller} \cdot (1+A_1) \quad \omega_{d} = \frac{1}{R_{in}C_{in}}
+$$
+\textbf{Durchtrittsfrequenz $\omega_{unity}$ abschätzen}
+Abstand zwischen dominantem Pol und dem Pol mit der zweithöchsten Frequenz bestimmen.
+
+$$
+\log_10(\frac{\omega_{p}}{\omega_d}) \approx X\; \text{Dekaden} \implies \omega'_{unity} \approx \omega_d \cdot X \cdot 10^{X}
+$$
+
+\textbf{Phasenreserve}
+Phasen von den beiden anderen Polen und Dominanten Pol (immer 90°) abziehen:
+
+$$
+PM = 180^{\circ} - 90^{\circ} - \arctan(\frac{\omega_{unity}}{\omega_{p1}}) - \arctan(\frac{\omega_{unity}}{\omega_{p2}})
+$$
+
+
+
+
+
 
 
 
 \end{multicols*}
 
+\newpage 
+\includegraphics[width=\linewidth]{assets/TABLE.png}
+\includegraphics[width=0.35\linewidth]{assets/ALU.png}
+\includegraphics[width=0.35\linewidth]{assets/MUL.png}
+\includegraphics[height=0.25\linewidth, angle=90]{assets/CLA.png}
+\\
+\includegraphics[width=0.5\linewidth]{assets/BIG.png}
 
-\includegraphics[width=0.5\linewidth]{assets/ALU.png}
-\includegraphics[width=0.5\linewidth]{assets/MUL.png}
+\includegraphics[width=0.5\linewidth]{assets/BIG2.png}
 \end{document}
 
 
