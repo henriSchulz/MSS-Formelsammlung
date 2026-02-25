@@ -325,7 +325,7 @@ $$
 
 \includegraphics[width=\linewidth]{assets/ANA1.png}
 
-\\\algo{Wilsomstromspiegel:}\\
+\algo{Wilson-Stromspiegel:}
 \begin{itemize}
     \item $V_\text{ov}, V_{GS}$ über $I_D$ berechnen.
     \item $V_{DS2} = 2 \cdot V_{GS}, V_{DS1} = V_{GS}$
@@ -344,9 +344,7 @@ $$
 I_1 = 0 \quad\text{für}\quad V_{G1} < V_{TH}
 $$
 Wenn $V_{DD_{min}}$ gesucht ist: $V_{DS3} = V_{OV}$
-$$
 
-$$
 
 \begin{itemize}
 \item Unabhängig von $V_{DD}$, da $I_1$ nur von $V_{TH}$ und den Transistoreigenschaften abhängt.
@@ -480,18 +478,23 @@ $$f_H = \frac{1}{2\pi (\tau_1 + \tau_2 + \dots)}$$
 
 \datastruct{OCTC: Cascode}
 
-\begin{align*}
-  R_{d1} &= r_{o1} \| R_{\text{in2}} \\
-  R_{\text{in2}} &= \frac{r_{o2} + R_L}{1 + g_{m2} r_{o2}} \\
-  R_o &= g_{m2} r_{o2} r_{o1} + r_{o1} + r_{o2} \\
-  \tau_1 &= R_{\text{sig}} \cdot C_{gs1} \\
-  \tau_2 &= \frac{v_x}{i_x} \cdot C_{gd1} \\
-  &= \left( g_{m1} R_{d1} R_{\text{sig}} + R_{\text{sig}} + R_{d1} \right) \cdot C_{gd1} \\
-  R_{d1} &= r_{o1} \| \frac{r_{o2} + R_L}{1 + g_{m2} r_{o2}} \\
-  \tau_3 &= R_{d1} \cdot (C_{db1} + C_{gs2}) \\
-  R_o &\approx g_{m2} r_{o2} r_{o1} \\
-  \tau_4 &= (R_o \| R_L) \cdot (C_L + C_{gd2} + C_{db2})
-\end{align*}
+\begin{center}
+\footnotesize
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{l X}
+\toprule
+\textbf{Knoten} & \textbf{Formel / Zeitkonstante} \\
+\midrule
+$R_{d1}$ & $r_{o1} \| R_{in2} = r_{o1} \| \frac{r_{o2} + R_L}{1 + g_{m2}r_{o2}}$ \\
+$R_o$ & $g_{m2}r_{o2}r_{o1} + r_{o1} + r_{o2} \approx g_{m2}r_{o2}r_{o1}$ \\
+\midrule
+$\tau_1 = R_{C_{gs1}} C_{gs1}$ & $R_{sig} \cdot C_{gs1}$ \\
+$\tau_2 = R_{C_{gd1}} C_{gd1}$ & $(g_{m1} R_{d1} R_{sig} + R_{sig} + R_{d1}) \cdot C_{gd1}$ \\
+$\tau_3 = R_{C_{d1}} \dots$ & $R_{d1} \cdot (C_{db1} + C_{gs2})$ \\
+$\tau_4 = R_{C_{out}} \dots$ & $(R_o \| R_L) (C_L + C_{gd2} + C_{db2})$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \includegraphics[width=0.75\linewidth]{assets/fqca.png}
 
@@ -793,7 +796,7 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 \includegraphics[width=\linewidth]{assets/VCG.png}
 
 \section{Sonstiges aus den Übungen}
-\subsection{Tiefpass}\\
+\subsection{Tiefpass}
 \includegraphics[width=0.9\linewidth]{assets/ANA3.png}
 
 $$
