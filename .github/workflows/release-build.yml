@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - '**.tex'
+    tags:
+      - 'v*'
 
 jobs:
   build_latex:
@@ -112,9 +114,17 @@ jobs:
           print(f"Dekorationen hinzugefügt: {total} Seiten.")
           PYEOF
 
-      # ── 4. Ergebnis hochladen ────────────────────────────────────────────────
+      # ── 4. Artefakt hochladen ────────────────────────────────────────────────
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
           name: MSS_Formelsammlung
           path: MSS_Formelsammlung.pdf
+
+      # ── 5. GitHub Release erstellen (nur bei Tags) ───────────────────────────
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: MSS_Formelsammlung.pdf
+          name: "Formelsammlung ${{ github.ref_name }}"
