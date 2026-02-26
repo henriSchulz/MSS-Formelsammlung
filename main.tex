@@ -72,13 +72,13 @@
 
 
 \titleformat{\section}
-    {\normalfont\large\bfseries} % Kleiner: "large" statt "Large"
+    {\color{gray!70}\titlerule\color{black}\normalfont\Large\bfseries}
     {\thesection}
-    {0.6em} % Weniger Abstand nach Nummer
+    {0.6em}
     {}
 
 \titleformat{\subsection}
-    {\normalfont\normalsize\bfseries} % Kleiner: "normalsize" statt "large"
+    {\normalfont\large\bfseries}
     {\thesubsection}
     {0.6em}
     {}
@@ -111,6 +111,8 @@
 \begin{document}
 
 \setlength{\columnsep}{8pt}
+\setlength{\columnseprule}{0.4pt}
+\renewcommand{\columnseprulecolor}{\color{gray!60}}
 \begin{multicols*}{3}
 
 \section{Grundgleichungen}
@@ -588,7 +590,29 @@ $$
 $$
 
 \algo{Miller Kondensator}: ermöglicht eine platzsparende Stabilisierung von Verstärkern durch künstliche Kapazitätsvergrößerung, erkauft dies jedoch durch eine deutliche Verringerung der Bandbreite bei hohen Frequenzen. 
+\algo{Mit Millerkondensator}
 
+\includegraphics[width=0.9\linewidth]{assets/MILLER.png}
+
+$$
+C_{in} = C_{Miller} \cdot (1-A_1) \quad \omega_{d} = \frac{1}{R_{in}C_{in}}
+$$
+\textbf{Durchtrittsfrequenz $\omega_{unity}$ abschätzen}
+Abstand zwischen dominantem Pol und dem Pol mit der zweithöchsten Frequenz bestimmen.
+
+$$
+\log_10(\frac{\omega_{p}}{\omega_d}) \approx X\; \text{Dekaden} \implies \omega'_{unity} \approx \omega_d \cdot X \cdot 10^{X}
+$$
+
+\textbf{Phasenreserve}
+Phasen von den beiden anderen Polen und Dominanten Pol (immer 90°) abziehen:
+
+$$
+PM = 180^{\circ} - 90^{\circ} - \arctan(\frac{\omega_{unity}}{\omega_{p1}}) - \arctan(\frac{\omega_{unity}}{\omega_{p2}})
+$$
+
+
+\includegraphics[width=0.75\linewidth]{assets/PMB.jpeg}
 
 
 
@@ -640,7 +664,7 @@ $$
 
 \includegraphics[width=\linewidth]{assets/DT4.png}
 
-\subsubsection{Digital Building Blocks}
+\section{Digital Building Blocks}
 
 \subsubsection{Volladdierer}
 $$S = A \oplus B \oplus C_{in}$$
@@ -695,7 +719,7 @@ $$
 \includegraphics[width=\linewidth]{assets/DT7.png}
 \includegraphics[width=\linewidth]{assets/DT11.png}
 
-\subsection{Technology Mapping}
+\section{Technology Mapping}
 
 \algo{Technology Mapping}: Abbildung einer ungebundenen Logikschaltung auf vordefinierte gebundene (optimiere) Bibliothekselemente.
 
@@ -720,7 +744,7 @@ $$
 \algo{Bounded Network}: Bei einem Bound Network handelt es sich um eine spezifische Zuordnung zu Zellen einer Bibliothek. 
 
 
-\subsection{FPGA}
+\section{FPGA}
 \begin{itemize}
 \item Besteht aus \algo{Configurable logic blocks}.
 \item Jeder Block enthält Look-Up-Tables (LUTs) für die Implementierung von Logikfunktionen etc.
@@ -744,7 +768,7 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 
 \end{itemize}
 
-\subsection{Physical Design}
+\section{Physical Design}
 
 \subsubsection{Partitioning}
 
@@ -759,7 +783,10 @@ Algorithmus von R. J. Francis zur optimalen LUT-Abdeckung.
 \algo{Simulated-Annealing-Methode}
 \begin{itemize}
 \item Kann globales Optimum finden, da es erlaubt, temporär schlechtere Lösungen zu akzeptieren.
-\item \datastruct{Metropolis-Kriterium}: Wird verwendet, um zu entscheiden, ob eine neue Lösung angenommen wird $\text{random}[0,1] \leq \min \{1,e^{-\frac{\text{cost}(S_\text{new})- \text{cost}(S)}{T}} \}$
+\item \datastruct{Metropolis-Kriterium}: Wird verwendet, um zu entscheiden, ob eine neue Lösung angenommen wird 
+$$
+\text{random}[0,1] \leq \min \{1,e^{-\frac{\text{cost}(S_\text{new})- \text{cost}(S)}{T}} \}
+$$
 \begin{tabbing}
 \quad \= \quad \= \quad \= \kill
 \( S \Leftarrow \mathit{initial\_solution} \) \\[1.5ex]
@@ -820,27 +847,10 @@ $$
 H(s) = \frac{A_1A_2}{(1+sC_1R_1)(1+sC_2R_2)} \quad \omega_pi = \frac{1}{R_iC_i}
 $$
 
-\algo{Mit Millerkondensator}
-
-\includegraphics[width=0.9\linewidth]{assets/MILLER.png}
-
-$$
-C_{in} = C_{Miller} \cdot (1+A_1) \quad \omega_{d} = \frac{1}{R_{in}C_{in}}
-$$
-\textbf{Durchtrittsfrequenz $\omega_{unity}$ abschätzen}
-Abstand zwischen dominantem Pol und dem Pol mit der zweithöchsten Frequenz bestimmen.
-
-$$
-\log_10(\frac{\omega_{p}}{\omega_d}) \approx X\; \text{Dekaden} \implies \omega'_{unity} \approx \omega_d \cdot X \cdot 10^{X}
-$$
-
-\textbf{Phasenreserve}
-Phasen von den beiden anderen Polen und Dominanten Pol (immer 90°) abziehen:
-
-$$
-PM = 180^{\circ} - 90^{\circ} - \arctan(\frac{\omega_{unity}}{\omega_{p1}}) - \arctan(\frac{\omega_{unity}}{\omega_{p2}})
-$$
-
+\includegraphics[width=\linewidth]{assets/AU1.jpeg}
+\includegraphics[width=\linewidth]{assets/AU2.jpeg}
+\includegraphics[width=\linewidth]{assets/AU3.jpeg}
+\includegraphics[width=\linewidth]{assets/Bode.jpeg}
 
 
 

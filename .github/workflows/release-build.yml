@@ -3,9 +3,9 @@ name: Build LaTeX PDF on Commit
 on:
   push:
     branches:
-      - main  # Ersetze 'main' durch deinen Branch-Namen, falls dieser anders heißt
+      - main
     paths:
-      - '**.tex' # Optional: Baut nur, wenn sich tatsächlich LaTeX-Dateien ändern
+      - '**.tex'
 
 jobs:
   build_latex:
@@ -15,19 +15,106 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # ── 1. LaTeX kompilieren ────────────────────────────────────────────────
       - name: Compile LaTeX Document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
-          compiler: latexmk
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+          compiler: pdflatex
+          args: -interaction=nonstopmode -file-line-error
 
-      - name: Rename PDF
-        run: mv main.pdf MSS-Formelsammlung.pdf
+      # ── 2. Build-Artefakte bereinigen ───────────────────────────────────────
+      - name: Cleanup build artifacts
+        run: python3 cleanup.py
 
+      # ── Abhängigkeiten installieren ─────────────────────────────────────────
+      - name: Install post-processing dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-extra-utils ghostscript poppler-utils
+          pip3 install pymupdf
+
+      # ── 3. A4-Layout erstellen (2×A3 pro A4-Seite) ─────────────────────────
+      - name: Create A4 layout with pdfjam
+        run: |
+          pdfjam \
+            --nup 1x2 \
+            --a4paper \
+            --no-landscape \
+            --delta "0 0" \
+            --quiet \
+            --outfile "MSS_Formelsammlung.pdf" \
+            "main.pdf"
+
+      # ── 3b. Ghostscript – Druckqualität maximieren (600 DPI) ────────────────
+      - name: Optimize print quality with Ghostscript
+        run: |
+          mv MSS_Formelsammlung.pdf _tmp_gs.pdf
+          gs \
+            -dNOPAUSE -dBATCH -dQUIET \
+            -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.7 \
+            -dPDFSETTINGS=/prepress \
+            -dColorImageResolution=600 \
+            -dGrayImageResolution=600 \
+            -dMonoImageResolution=1200 \
+            -dColorImageDownsampleType=/Bicubic \
+            -dGrayImageDownsampleType=/Bicubic \
+            -dEmbedAllFonts=true \
+            -dSubsetFonts=true \
+            -sOutputFile="MSS_Formelsammlung.pdf" \
+            "_tmp_gs.pdf"
+          rm _tmp_gs.pdf
+
+      # ── 3c. Trennlinien + Seitenzahlen hinzufügen ───────────────────────────
+      - name: Add divider lines and page numbers
+        run: |
+          python3 - <<'PYEOF'
+          import sys, os, tempfile
+          import fitz  # PyMuPDF
+
+          INPUT = "MSS_Formelsammlung.pdf"
+          doc = fitz.open(INPUT)
+          total = doc.page_count
+
+          for i, page in enumerate(doc):
+              w = page.rect.width
+              h = page.rect.height
+              mid_y = h / 2
+
+              # Trennlinie in der Mitte
+              page.draw_line(
+                  fitz.Point(14, mid_y),
+                  fitz.Point(w - 14, mid_y),
+                  color=(0.4, 0.4, 0.4),
+                  width=0.8,
+                  dashes="[4 3]",
+              )
+
+              # Seitenzahl unten rechts
+              page_num = f"{i + 1} / {total}"
+              font_size = 8
+              text_width = fitz.get_text_length(page_num, fontname="Helvetica", fontsize=font_size)
+              page.insert_text(
+                  fitz.Point(w - 10 - text_width, h - 10),
+                  page_num,
+                  fontsize=font_size,
+                  fontname="Helvetica",
+                  color=(0.3, 0.3, 0.3),
+              )
+
+          dir_ = os.path.dirname(os.path.abspath(INPUT))
+          with tempfile.NamedTemporaryFile(suffix=".pdf", dir=dir_, delete=False) as tmp:
+              tmp_path = tmp.name
+          doc.save(tmp_path, garbage=4, deflate=True, clean=True)
+          doc.close()
+          os.replace(tmp_path, INPUT)
+          print(f"Dekorationen hinzugefügt: {total} Seiten.")
+          PYEOF
+
+      # ── 4. Ergebnis hochladen ────────────────────────────────────────────────
       - name: Upload PDF Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MSS-Formelsammlung-Build
-          path: MSS-Formelsammlung.pdf
-          #retention-days: 14 # Optional: Löscht das File automatisch nach 14 Tagen
+          name: MSS_Formelsammlung
+          path: MSS_Formelsammlung.pdf
