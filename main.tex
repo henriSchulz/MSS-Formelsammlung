@@ -134,9 +134,10 @@ $$I_{D} = \begin{cases}
 % Bedingung: |V_DS| \ge |V_OV|
 \algo{Sättigungsbereich ($|V_{DS}| \ge |V_{OV}|$):} \\
 $$I_{D} = \begin{cases} 
-    \frac{1}{2} \mu_n C_{ox} \frac{W}{L} V_{OV}^2 & \text{NMOS} \\
-    \frac{1}{2} \mu_p C_{ox} \frac{W}{L} |V_{OV}|^2 & \text{PMOS}
+    \frac{1}{2} \mu_n C_{ox} \frac{W}{L} V_{OV}^2 \cdot {\color{red}(1 + \lambda V_{DS})} & \text{NMOS} \\
+    \frac{1}{2} \mu_p C_{ox} \frac{W}{L} |V_{OV}|^2 \cdot {\color{red}(1 + \lambda |V_{DS}|)} & \text{PMOS}
 \end{cases}$$
+
 \algo{Transkonduktanz ($g_m$):} \\
 $$g_m = \left . \frac{\partial I_D}{\partial V_{GS}}\right|_{V_{DS}=\text{const.}} = \frac{2I_D}{V_{OV}} = \mu \cdot C_{ox} \frac{W}{L} V_{\text{Ov}} = \sqrt{2 \cdot \mu \cdot C_{ox} \cdot \frac{W}{L} \cdot I_D}$$
 \algo{Ausgangwiederstand ($r_o$) }
@@ -274,7 +275,7 @@ $V_{in1} = V_{in,CM} + \frac{V_{id}}{2}$, $V_{in2} = V_{in,CM} - \frac{V_{id}}{2
 \algo{Verstärkung} \\
 Gegentakt: $A_d = \frac{V_{out}}{V_{id}} = -g_m \cdot (R_D || r_o)$ \\
 \textcolor{red}{bei aktiver Last: $r_{o1/2} || r_{o3/4}$} \\
-Gleichtakt: $A_{CM} = \frac{V_{out}}{V_{CM}} \approx \frac{-g_m R_D}{1 + g_m R_{SS}} \approx -\frac{R_D}{2 R_{SS}}$ \quad ($V_{in1} = V_{in2} = V_{CM}$)
+Gleichtakt: $A_{CM} = \frac{V_{out}}{V_{CM}} \approx \frac{-g_m R_D}{1 + g_m 2R_{SS}} \approx -\frac{R_D}{2 R_{SS}}$ \quad ($V_{in1} = V_{in2} = V_{CM}$)
 
 \algo{Eigenschaften} \\
 Gegentakt: Virtuelle Masse im Source Knoten \\
@@ -327,10 +328,24 @@ $$
 
 \algo{Wilson-Stromspiegel:}
 \begin{itemize}
+    \item Verhält sich wie Cascode CM.
     \item $V_\text{ov}, V_{GS}$ über $I_D$ berechnen.
-    \item $V_{DS2} = 2 \cdot V_{GS}, V_{DS1} = V_{GS}$
-    \item 
+    \item $V_{DS,REF} = V_{DS2} = 2 \cdot V_{GS}, V_{DS,OUT} = V_{DS1} = V_{GS}$
+    \item Wenn CLM relevant: $\frac{I_{OUT}}{I_{REF}} = \frac{(W/L)_{OUT}}{(W/L)_{REF}} \cdot \frac{1+\lambda V_{DS,REF}}{1+\lambda V_{DS,OUT}}$
+    \item $\implies I_{OUT} = I_{REF} \cdot \frac{(W/L)_{OUT}}{(W/L)_{REF}} \cdot \frac{1+\lambda V_{DS,REF}}{1+\lambda V_{DS,OUT}}$
+    \item $\Delta I_{OUT} = |I_{REF} - I_{OUT}|$
+    \item $r_0$ wie Kaskode.
 \end{itemize}
+\algo{Wilson-Stromspiegel mit 4 Transistoren:}
+
+\begin{itemize}
+    \item Verhält sich wie Self-Biased Cascode CM. 
+    \item $V_{DS1} = V_{DS2} =V_{DS4} = V_{GS}$
+    \item $I_{OUT} = I_{REF}$
+    \item $V_{OUT_{min}} = V_{TH} + 2V_{OV}$
+    \item Stromänderung durch $\Delta U$ verursacht: $\Delta I_{OUT} = \frac{\Delta U}{R_{OUT}}$. Relativ: $\frac{\Delta I_{OUT}}{I_{OUT}}$.
+\end{itemize}
+
 
 \section{Stromreferenzen}
 \algo{Self-Biased (Bootstrapped) Current Reference}
@@ -344,7 +359,7 @@ $$
 I_1 = 0 \quad\text{für}\quad V_{G1} < V_{TH}
 $$
 Wenn $V_{DD_{min}}$ gesucht ist: $V_{DS3} = V_{OV}$
-
+\vspace{0.3cm}
 
 \begin{itemize}
 \item Unabhängig von $V_{DD}$, da $I_1$ nur von $V_{TH}$ und den Transistoreigenschaften abhängt.
